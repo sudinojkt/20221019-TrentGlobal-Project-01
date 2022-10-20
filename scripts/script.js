@@ -86,7 +86,7 @@ function initMap() {
     // create a map object
     let map = L.map('map');
     // set the center point and the zoom
-    map.setView([1.3521, 103.8198], 12);              //(1.3521, 103.8198) added 20221019@21:08 1.29, 103.85
+    map.setView([1.3521, 103.8198], 12);  
 
     // need set up the tile layer
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -95,20 +95,20 @@ function initMap() {
         id: 'mapbox/streets-v11',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
+        accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' 
     }).addTo(map);
 
-    let markerClusterLayer = L.markerClusterGroup();   //221019@2225
-    markerClusterLayer.addTo(map);   // 221019@2225
-    axios.get('https://api.data.gov.sg/v1/transport/taxi-availability')   //221019@2225  //https://data.gov.sg/dataset/listing-of-licensed-pharmacies
+    let markerClusterLayer = L.markerClusterGroup();   
+    markerClusterLayer.addTo(map);  
+    axios.get('https://api.data.gov.sg/v1/transport/taxi-availability')   
         .then(function (response) {
-            let places = response.data.features[0]["geometry"]["coordinates"];   //221019@2225 api.data.gov.sg/v1/transport/taxi-availability
-            for (place of places) {   //221019@2225
-                console.log(place);    //221019@2225
-                let marker = L.marker([place[1], place[0]]);   //221019@2225
-                marker.addTo(markerClusterLayer);  //221019@2225
-            }   //221019@2225
-        })    //221019@2225
+            let places = response.data.features[0]["geometry"]["coordinates"];   
+            for (place of places) {   
+                console.log(place);   
+                let marker = L.marker([place[1], place[0]]);   
+                marker.addTo(markerClusterLayer); 
+            }   
+        })    
 
 
     return map; // return map as result of the function
