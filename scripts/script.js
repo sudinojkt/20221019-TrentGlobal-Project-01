@@ -1,11 +1,19 @@
 // Use DOMContentLoaded as our main entry point
-window.addEventListener("DOMContentLoaded", async function () {
+window.addEventListener("DOMContentLoaded", async function (){
 
-    // SETUP //////////////////////////////////////////////////////////////////
-    // create a map object
-    let map = L.map('map');
-    // set the center point and the zoom
-    map.setView([1.29, 103.85], 6);
+    // this function is to setup the application
+    function init(){
+        let map = initMap();
+    };
+
+    init();
+
+});
+
+function initMap(){ 
+    
+    // create a map object and set the center point and the zoom
+    let map = L.map('map').setView([1.3521, 103.8198], 12); //oct21@2120: merge map object and center point
 
     // need set up the tile layer
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -17,6 +25,5 @@ window.addEventListener("DOMContentLoaded", async function () {
         accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
     }).addTo(map);
 
-    //////////////////////////////////////////////////////////////////////////
-})
-
+    return map; // return map as a result of the function
+}
