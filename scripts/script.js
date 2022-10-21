@@ -102,6 +102,8 @@ function initMap() {
     markerClusterLayer.addTo(map);  
     axios.get('https://api.foursquare.com/v3/places/search')   
         .then(function (response) {
+            console.log(response); //test
+            //let places = response.data.features[0]["geometry"]["coordinates"]; 
             let places = response.data.features[0]["geometry"]["coordinates"];   
             for (place of places) {   
                 console.log(place);   
