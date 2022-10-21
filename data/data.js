@@ -20,14 +20,14 @@ async function search(lat, lng, query) {       // As provided by Foursquare  Oct
         params: {
             'll': ll,
             'v': '20210903',  // YYYYMMDD format (It's for version control)
-            //'query': 'query',
-            'radius': 100000 //100km
+            'query': 'query',
+            'radius': 100000, //100km
             //'limit':50, 
             //'category': 13072,  // to check foursquare for the right code for MOS burger
         }
     });
-    console.log(response.data)
-    return response.data;
+    //console.log(response.data)
+    return response.data;   // to return the search result for the function
 }
 
-search(1.3521, 103.8198, "MOS burger")
+//search(1.3521, 103.8198, "MOS burger")
