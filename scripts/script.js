@@ -100,7 +100,7 @@ function initMap() {
 
     let markerClusterLayer = L.markerClusterGroup();   
     markerClusterLayer.addTo(map);  
-    axios.get('https://api.data.gov.sg/v1/transport/taxi-availability')   
+    axios.get('https://api.foursquare.com/v3/places/search')   
         .then(function (response) {
             let places = response.data.features[0]["geometry"]["coordinates"];   
             for (place of places) {   
