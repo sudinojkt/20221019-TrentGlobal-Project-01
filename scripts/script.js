@@ -4,7 +4,40 @@ window.addEventListener("DOMContentLoaded", async function (){
     // this function is to setup the application
     function init(){
         let map = initMap();
-    };
+
+        // add a layer to store the search results
+        let searchResultLayer = L.layerGroup();
+        searchResultLayer.addTo(map);
+
+        document.querySelector("#btnToggleSearch").addEventListener("click", async function() {
+            // remove all the existing markers first before adding the new ones
+            searchResultLayer.clearLayers();
+            let searchTerms = document.querySelector("#searchTerm").value;
+            let boundaries = map.getBounds();
+            let center = boundaries.getCenter(); //in lat lng
+            let latLng = center.lat + "," + center.lng; //Foursquare expects
+            let searchResults = await search(latLng, searchTerms, 5000);
+            //console.log(results);
+
+            for (let r of searchResult.results) {
+        	    let lat = r.geocodes.main.latitude;
+        	    let lng = r.geocodes.main.longitude;
+        	    //console.log(lat, lng);
+                L.marker(lat, lng).addTo(map);
+            }
+
+            // let searchContainerElement = document.querySelector('#search-container');
+            // let currentDisplay = searchContainerElement.style.display;
+            // if (! currentDisplay || currentDisplay=='none') {
+            //     // if it is not visible
+            //     searchContainerElement.style.display = "block";
+
+            // } else {
+            //     searchContainerElement.style.display = "none";
+            // }
+        });
+
+    }
 
     init();
 

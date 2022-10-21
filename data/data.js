@@ -10,7 +10,7 @@ const headers = {
     Authorization: API_KEY
 }
 
-async function search(lat, lng, query) {       // As provided by Foursquare  Oct21@2221 
+async function search(lat, lng, query) {       // As provides by Foursquare  Oct21@2221 
     // create the coordinate
     let ll = lat + "," + lng;
     let response = await axios.get(API_BASE_URL + "/places/search", {
@@ -26,7 +26,7 @@ async function search(lat, lng, query) {       // As provided by Foursquare  Oct
             //'category': 13072,  // to check foursquare for the right code for MOS burger
         }
     });
-    //console.log(response.data)
+    console.log(response.data);
     return response.data;   // to return the search result for the function
 }
 
