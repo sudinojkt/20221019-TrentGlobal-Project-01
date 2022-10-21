@@ -100,19 +100,15 @@ function initMap() {
 
     let markerClusterLayer = L.markerClusterGroup();   
     markerClusterLayer.addTo(map);  
-    axios.get('https://api.foursquare.com/v3/places/search')   
-        .then(function (response) {
-            console.log(response); //test
-            //let places = response.data.features[0]["geometry"]["coordinates"]; 
-            let places = response.data.features[0]["geometry"]["coordinates"];   
-            for (place of places) {   
-                console.log(place);   
-                let marker = L.marker([place[1], place[0]]);   
-                marker.addTo(markerClusterLayer); 
-            }   
-        })    
-
-
+    let foodData = await search(1.3521,103.8198, "mos burger");
+    for (let result of foodData.results){
+        let lat = result.geocodes.main.latitude;
+        let lon = result.geocodes.main.longitude;
+        let marker = L.marker([lat, lon]).addTo(map); 
+        let marker = L.marker([place[1], place[0]]);   
+        marker.addTo(markerClusterLayer); 
+    } 
+})    
     return map; // return map as result of the function
 }
 
