@@ -15,9 +15,9 @@ window.addEventListener("DOMContentLoaded", async function (){
             let searchTerms = document.querySelector("#searchTerm").value;
             let boundaries = map.getBounds();
             let center = boundaries.getCenter(); //in lat lng
-            let latLng = center.lat + "," + center.lng; //Foursquare expects
+            let latLng = center.lat + "," + center.lng; //Foursquare expects          
             let searchResults = await search(latLng, searchTerms, 5000);
-            //console.log(results);
+            console.log(results);
 
             for (let r of searchResult.results) {
         	    let lat = r.geocodes.main.latitude;
@@ -31,12 +31,10 @@ window.addEventListener("DOMContentLoaded", async function (){
             // if (! currentDisplay || currentDisplay=='none') {
             //     // if it is not visible
             //     searchContainerElement.style.display = "block";
-
             // } else {
             //     searchContainerElement.style.display = "none";
             // }
         });
-
     }
 
     init();
@@ -46,7 +44,7 @@ window.addEventListener("DOMContentLoaded", async function (){
 function initMap(){ 
     
     // create a map object and set the center point and the zoom
-    let map = L.map('map').setView([1.3521, 103.8198], 12); //oct21@2120: merge map object and center point
+    let map = L.map('map').setView([1.3521, 103.8198], 12);  
 
     // need set up the tile layer
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
