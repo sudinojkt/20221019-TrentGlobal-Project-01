@@ -16,9 +16,9 @@ async function main () {
     let response = await axios.get(API_BASE_URL + "search", {
         "headers": headers,
         "param": {
-            "ll": ll,
-            "query": "chicken rice"
-            'v': "20210903", //(Unique Foursquare) YYYYMMDD format for version control            
+            'll': ll,
+            'query': "chicken rice"
+            'v': 20210903, //(Unique Foursquare) YYYYMMDD format for version control            
         }
     });
     console.log(response.data);
