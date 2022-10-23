@@ -49,4 +49,7 @@ async function placeSearch() {
     } catch (err) {
         console.error(err);
     }
+    console.log(response.data);
 }
+
+placeSearch();
