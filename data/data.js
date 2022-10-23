@@ -1,7 +1,7 @@
 // all things related to retriving data with axios
 // goes here
 
-const API_BASE_URL = "https://api.foursquare.com/v3";
+const API_BASE_URL = "https://api.foursquare.com/v3/places/";
 const API_KEY = "fsq3QDBN0pfxk64qwMqNNvXhhDwbZOfIZqUEa4L/YjiNATQ="
 
 // tells the Foursquare API server that the format of data we are sending is JSON
@@ -18,7 +18,7 @@ async function main () {
         "param": {
             'll': ll,
             'query': "chicken rice"
-            'v': 20210903, //(Unique Foursquare) YYYYMMDD format for version control            
+            //'v': 20210903,         
         }
     });
     console.log(response.data);
