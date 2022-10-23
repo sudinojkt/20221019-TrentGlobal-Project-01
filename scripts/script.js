@@ -72,8 +72,8 @@ window.addEventListener("DOMContentLoaded", async function () {
                 // and it is not a global variable (i.e it's the local variable of another scope)
                 // therefore the created anoymous function will remember for itself what 'r'
                 // stores when it is created. (Also known as a closure)
-                resultElement.addEvenetListener("click", function() {
-                    map.flyTo([r.geocodes.main.latitude, r.geoncodes.main.longtitude], 16)
+                resultElement.addEventListener("click", function() {
+                    map.flyTo([r.geocodes.main.latitude, r.geoncodes.main.longitude], 16)
                 });
 
                 searchResultElement.appendChild(resultElement);
