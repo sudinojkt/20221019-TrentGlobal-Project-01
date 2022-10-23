@@ -9,26 +9,31 @@ const headers = {
     Authorization: API_KEY,
 }
 
-async function searchPlace(ll, searchPlace, radius, category = "")
-//async function searchPlace(lat, lng, searchPlace) {
+//async function searchPlace(lat, lng, searchPlace, radius, category="")
+async function searchPlace(lat, lng, searchPlace) {
 let url = API_BASE_URL + "/places/search";
 let ll = lat + "," + lng;
 let response = await axios.get(url, {
     headers: { ...headers },
     params: {
         ll: ll,
-        query: searchPlace,
+        query: searchPlace, //must not have " "
         radius: 100000,
         category: 13000,
         limit: 30,
         v: 20210903,
     }
 });
-console.log(response.data)
+//console.log(response.data)
 return response.data;
 }
 
-async function main() {
-    searchPlace(1.3521, 103.8198, "burger king", 5000)
-}
-main();
+// async function main() {
+
+//     let results = await searchPlace(1.3521, 103.8198, "coffee bean", 5000);
+//     for (let r of results){
+//         L.marker
+//     }
+
+// }
+// main();
