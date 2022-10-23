@@ -64,7 +64,7 @@ async function search(lat, lng, query) {       // refer to Foursquare  Oct21@222
         params: {
             'll': '1.3521, 103.8198',
             //'v': '20210903',      // YYYYMMDD format (It's for version control)
-            'query': 'burger',
+            'query': 'query',
             'radius': 100000,    //100km
             'limit':50, 
             'category': 13032,  // to check foursquare for the right code for MOS burger
