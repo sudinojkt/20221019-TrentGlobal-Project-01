@@ -1,15 +1,21 @@
 // Use DOMContentLoaded as our main entry point
-window.addEventListener("DOMContentLoaded", async function() {
-
+window.addEventListener("DOMContentLoaded", async function () {
+    
     // this functionis to set up the application
     function init() {
         let map = initMap();
-    }
-
+        
+        document.querySelector("#btnSearch").addEventListener("click", async function) {
+            let searchTerms = document.querySelector("#searchTerms").value;
+            let boundaries = map.getBounds();
+            let center = boundaries.getCenter();
+            let latlng = center.lat + "," + center.lng;
+            let response = await searchTerms(latlng, serachTerms, 100000);
+            console.log(results);
+        });
+    
     init();
-
-})
-
+    
 function initMap() {
     // create a map object and set center point zoom
     let map = L.map('map').setView([1.3521, 103.8198], 12);
