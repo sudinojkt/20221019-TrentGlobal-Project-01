@@ -7,21 +7,21 @@ const API_KEY = "fsq3QDBN0pfxk64qwMqNNvXhhDwbZOfIZqUEa4L/YjiNATQ=";
 const headers = {
     Accept: 'application/json',
     // API Key to use; the API Key identifies which project it's
-    Authorization: API_KEY
+    Authorization: API_KEY,
 }
 
-//async function searchPlace(ll, search, radius, category = "")
-async function searchPlace(lat, lng, searchPlace) {
+//async function searchPlace(ll, search, radius, category="")
+async function searchPlace(lat,lng, searchPlace) {
     let url = API_BASE_URL + "/places/search";
     let ll = lat + "," + lng; 
     let response = await axios.get(url, {
         headers: { ...headers },
         params: {
             ll: ll,
-            query: 'searchPlace',
+            query: searchPlace,
             radius: 100000,
-            //category: category,
-            limit: 10,
+            category: 13000,
+            limit: 20,
             v: 20210903,
         }
     });
@@ -29,9 +29,7 @@ async function searchPlace(lat, lng, searchPlace) {
     return response.data;
 }
 
-//searchPlace(1.3521, 103.8198, "chicken rice", 1000);
-
 async function main() {
-    searchPlace(1.527549, 103.75476, "fish soup", 5000)
+    searchPlace(1.3521, 103.8198, "burger king", 5000)
 }
 main();
