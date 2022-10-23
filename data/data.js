@@ -18,7 +18,7 @@ async function main () {
         "param": {
             "ll": ll,
             "query": "chicken rice"
-            "v": "20210903", //(Unique Foursquare) YYYYMMDD format for version control            
+            'v': "20210903", //(Unique Foursquare) YYYYMMDD format for version control            
         }
     });
     console.log(response.data);
