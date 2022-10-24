@@ -6,34 +6,20 @@ const API_KEY = "fsq3QDBN0pfxk64qwMqNNvXhhDwbZOfIZqUEa4L/YjiNATQ=";
 const headers = {
     Accept: 'application/json',
     // API Key to use; the API Key identifies which project it's
-    Authorization: API_KEY,
-}
+    Authorization: API_KEY,  }
 
-//async function searchPlace(lat, lng, searchPlace, radius, category="")
-async function searchPlace(lat, lng, searchPlace, radius, category="") {
+//this is a global function 
+async function search(ll, search, radius, category="") {
 let url = API_BASE_URL + "/places/search";
-let ll = lat + "," + lng;
 let response = await axios.get(url, {
-    headers: { ...headers },
-    params: {
-        ll: ll,
-        query: searchPlace, //must not have " "
-        radius: 100000,
-        category: 13000,
-        limit: 30,
-        v: 20210903,
-    }
+    "headers": headers,
+    "params": {
+        "ll": ll,
+        "query": search,  
+        "radius": 100000,
+        "category": 13000,
+        "limit": 30,
+        "v": 20210903,      }
 });
-//console.log(response.data)
 return response.data;
 }
-
-// async function main() {
-
-//     let results = await searchPlace(1.3521, 103.8198, "coffee bean", 5000);
-//     for (let r of results){
-//         L.marker
-//     }
-
-// }
-// main();
