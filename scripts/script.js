@@ -1,66 +1,60 @@
 // Use DOMContentLoaded as our main entry point
-window.addEventListener("DOMContentLoaded", async function () {  
+window.addEventListener("DOMContentLoaded", async function(){
 
     // this functionis to set up the application
-    function init() { 
+    function init(){
         let map = initMap();
 
         //add a layer to store the search results
         let searchResultLayer = L.layerGroup();
         searchResultLayer.addTo(map);
-
-        document.querySelector("#btnToggleSearch").addEventListener("click", function () {
+        
+        document.querySelector("#btnToggleSearch").addEventListener("click", function(){
             let searchContainerElement = document.querySelector("#search-container");
             let currentDisplay = searchContainerElement.style.display;
-            if (!currentDisplay || currentDisplay == 'none') {
+            if (!currentDisplay || currentDisplay == 'none'){
                 //if it is not visible
                 searchContainerElement.style.display = "block";
-
             } else {
                 searchContainerElement.style.display = "none";
-            }  //19&21
+            }
         });
 
-        document.querySelector("#btnSearch").addEventListener("click", async function () {
+        document.querySelector("#btnSearch").addEventListener("click", async function(){
             //remove all existing markers first before adding the new ones
-            searchResultLayer.clearLayers();   //Layers
+            searchResultLayer.clearLayers();
 
             let searchTerms = document.querySelector("#searchTerms").value;
             let boundaries = map.getBounds();
             let center = boundaries.getCenter();
-            let latLng = center.lat + "," + center.lng;
-            let searchResults = await search(latLng, searchTerms, 5000);
+            let latlng = center.lat + "," + center.lng;
+
+            let searchResults = await search(latlng, searchTerms, 5000);
 
             let searchResultElement = document.querySelector("#results");
-
-            for (let r of searchResults.results) {
-
+            for (let r of searchResults.results){
                 console.log(r);
+                //Display the marker
                 let lat = r.geocodes.main.latitude;
                 let lng = r.geocodes.main.longitude;
+
                 let marker = L.marker([lat, lng]).addTo(searchResultLayer);
 
-                // the function for the popup cannot be an async function
-                // marker.bindPopup(function() {  //44&81  additonal line detected
-
-                // the function for the popup cannot be an async function
-                marker.bindPopup(function () {
-
+                marker.bindPopup(function(){
                     let el = document.createElement('div');
                     // add the 'popup' class to the <div>
                     // see style.css for its definition
                     el.classList.add("popup")
                     el.innerHTML = `<h1>${r.name}</h1>`
-                    async function getPicture() {
+
+                    async function getPicture(){
                         let photos = await getPhoto(r.fsq_id);
                         let firstPhoto = photos[0];
                         let url = firstPhoto.prefix + "original" + firstPhoto.suffix;
                         el.innerHTML += `<img src="${url}"/>`
                     }
-
                     getPicture();
                     return el;
-
                 });
 
                 // add to the search results
@@ -79,14 +73,10 @@ window.addEventListener("DOMContentLoaded", async function () {
                 });
 
                 searchResultElement.appendChild(resultElement);
-
             }
-
         });
-    }  //5&86
-
+    }
     init();
-
 });
 
 function initMap() {
