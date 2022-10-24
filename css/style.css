@@ -15,7 +15,7 @@
     /* the height container, depending on its content, can be more than 25px. 
     But when it has no content, it has to be 25px */
     min-height: 25px; 
-    width: 300px;
+    width: 330px; 
     padding-top: 15px;
     padding-bottom: 10px;
     padding-left: 10px;

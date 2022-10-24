@@ -1,25 +1,46 @@
-// all things related to retriving data with axios goes here
-const API_BASE_URL = "https://api.foursquare.com/v3";
+// All base URLs of API 
+const API_BASE_URL = "https://api.foursquare.com/v3/places/";   // fsq places search
+
+// All API Keys
 const API_KEY = "fsq3QDBN0pfxk64qwMqNNvXhhDwbZOfIZqUEa4L/YjiNATQ=";
 
-// tells the Foursquare API server that the format of data we are sending is JSON
+// Data format and Authorization
 const headers = {
     Accept: 'application/json',
     // API Key to use; the API Key identifies which project it's
-    Authorization: API_KEY,  }
+    Authorization: API_KEY,
+}
 
-//this is a global function 
-async function search(ll, search, radius, category="") {
-let url = API_BASE_URL + "/places/search";
-let response = await axios.get(url, {
-    "headers": headers,
-    "params": {
-        "ll": ll,
-        "query": search,  
-        "radius": 100000,
-        "category": 13000,
-        "limit": 30,
-        "v": 20210903,      }
-});
-return response.data;
+// Four Square search categoryIDs
+const categoryIDs = {
+    "Arts and Entertainment": "10000",
+    "Business and Professional Services": "11000",
+    "Community and Government": "12000",
+    "Dining and Drinking": "13000",
+    "Event": "14000",
+    "Health and Medicine": "15000",
+    "Landmarks and Outdoors": "16000",
+    "Retail": "17000",
+    "Sports and Recreation": "18000",
+    "Travel and Transportation": "19000",
+};
+
+// Singapore coordinate
+const latLng = "1.3521, 103.8198";
+
+//Get data function  
+async function search(latLng, search, category="") {
+    let url = API_BASE_URL + "search";
+    let response = await axios.get(url, {
+        "headers": headers,
+        "params": {
+            "ll": latLng,
+            "query": search,
+            "radius": 10000,
+            "category": category,
+            "limit": 50,
+            "v": 20210903,
+        }
+    });
+    return response.data;
 }
