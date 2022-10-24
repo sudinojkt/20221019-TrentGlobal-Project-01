@@ -10,7 +10,7 @@ const headers = {
 }
 
 //async function searchPlace(lat, lng, searchPlace, radius, category="")
-async function searchPlace(lat, lng, searchPlace) {
+async function searchPlace(lat, lng, searchPlace, radius, category="") {
 let url = API_BASE_URL + "/places/search";
 let ll = lat + "," + lng;
 let response = await axios.get(url, {

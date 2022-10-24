@@ -1,15 +1,15 @@
 // Use DOMContentLoaded as our main entry point
-window.addEventListener("DOMContentLoaded", async function () {
+window.addEventListener("DOMContentLoaded", async function () {  
 
     // this functionis to set up the application
-    function init() {
+    function init() { 
         let map = initMap();
 
         //add a layer to store the search results
         let searchResultLayer = L.layerGroup();
         searchResultLayer.addTo(map);
 
-        document.querySelector("#btnToggleSearch").addEventListener("click", function() {
+        document.querySelector("#btnToggleSearch").addEventListener("click", function () {
             let searchContainerElement = document.querySelector("#search-container");
             let currentDisplay = searchContainerElement.style.display;
             if (!currentDisplay || currentDisplay == 'none') {
@@ -18,33 +18,34 @@ window.addEventListener("DOMContentLoaded", async function () {
 
             } else {
                 searchContainerElement.style.display = "none";
-            }
+            }  //19&21
         });
-        
-        document.querySelector("#btnSearch").addEventListener("click", async function() {
+
+        document.querySelector("#btnSearch").addEventListener("click", async function () {
             //remove all existing markers first before adding the new ones
-            searchResultLayer.clearLayer();
+            searchResultLayer.clearLayers();   //Layers
 
             let searchTerms = document.querySelector("#searchTerms").value;
             let boundaries = map.getBounds();
             let center = boundaries.getCenter();
-            let latlng = center.lat + "," + center.lng;
-            let searchResults = await searchTerms(latlng, searchTerms, 100000);
+            let latLng = center.lat + "," + center.lng;
+            let searchResults = await search(latLng, searchTerms, 5000);
 
-            let searchResultElement = document.querySelector("#results")
+            let searchResultElement = document.querySelector("#results");
 
             for (let r of searchResults.results) {
 
-                //console.log(r);
+                console.log(r);
                 let lat = r.geocodes.main.latitude;
                 let lng = r.geocodes.main.longitude;
                 let marker = L.marker([lat, lng]).addTo(searchResultLayer);
 
-            // the function for the popup cannot be an async function
-            marker.bindPopup(function() {
+                // the function for the popup cannot be an async function
+                // marker.bindPopup(function() {  //44&81  additonal line detected
 
                 // the function for the popup cannot be an async function
                 marker.bindPopup(function () {
+
                     let el = document.createElement('div');
                     // add the 'popup' class to the <div>
                     // see style.css for its definition
@@ -72,8 +73,9 @@ window.addEventListener("DOMContentLoaded", async function () {
                 // and it is not a global variable (i.e it's the local variable of another scope)
                 // therefore the created anoymous function will remember for itself what 'r'
                 // stores when it is created. (Also known as a closure)
-                resultElement.addEventListener("click", function() {
+                resultElement.addEventListener("click", function () {
                     map.flyTo([r.geocodes.main.latitude, r.geoncodes.main.longitude], 16)
+                    marker.openPopup();
                 });
 
                 searchResultElement.appendChild(resultElement);
@@ -81,7 +83,7 @@ window.addEventListener("DOMContentLoaded", async function () {
             }
 
         });
-    }
+    }  //5&86
 
     init();
 
@@ -101,4 +103,4 @@ function initMap() {
         accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
     }).addTo(map);
     return map; // return map as a result of the function
-}
+} 
