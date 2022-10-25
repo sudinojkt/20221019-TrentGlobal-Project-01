@@ -48,7 +48,8 @@ async function search(latLng, search, category="") {
 
 //Get photos data function  
 async function getPhoto(fsq_id) {
-    let response = await axios.get(API_BASE_URL + `${fsq_id}/photos`,{
+    let url = API_BASE_PLACES_URL + fsq_id + "/photo";
+    let response = await axios.get(url, {
         'headers': headers
     });
     return response.data;
