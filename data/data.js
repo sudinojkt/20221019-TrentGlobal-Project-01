@@ -1,6 +1,5 @@
 // All base URLs of API 
 const API_BASE_PLACES_URL = "https://api.foursquare.com/v3/places/";   // fsq places search
-//const API_BASE_PHOTO_URLS = "https://api.foursquare.com/v3/places/{fsq_id}/photos" // fsq photo API
 
 // All API Keys
 const API_KEY = "fsq3QDBN0pfxk64qwMqNNvXhhDwbZOfIZqUEa4L/YjiNATQ=";
