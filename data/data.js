@@ -38,7 +38,7 @@ async function search(latLng, search, category="") {
             "ll": latLng,
             "query": search,
             "radius": 10000,
-            "category": category,
+            "categories": "11056, 11057, 11058, 13052, 13053, 13054",
             "limit": 50,
             "v": 20210903,
         }

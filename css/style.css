@@ -33,6 +33,10 @@
     margin: 5px;
 }
 
+.dropdown {
+    margin: 5px;
+}
+
 #btnToggleSearch {
     position: absolute;
     left: 50px;
