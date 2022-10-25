@@ -1,5 +1,6 @@
 // All base URLs of API 
-const API_BASE_URL = "https://api.foursquare.com/v3/places/";   // fsq places search
+const API_BASE_PLACES_URL = "https://api.foursquare.com/v3/places/";   // fsq places search
+const API_BASE_PHOTO_URLS = "https://api.foursquare.com/v3/places/{fsq_id}/photos" // fsq photo API
 
 // All API Keys
 const API_KEY = "fsq3QDBN0pfxk64qwMqNNvXhhDwbZOfIZqUEa4L/YjiNATQ=";
@@ -26,11 +27,11 @@ const categoryIDs = {
 };
 
 // Singapore coordinate
-const latLng = "1.3521, 103.8198";
+const latLng = "1.3521,103.8198";
 
 //Get data function  
 async function search(latLng, search, category="") {
-    let url = API_BASE_URL + "search";
+    let url = API_BASE_PLACES_URL + "search";
     let response = await axios.get(url, {
         "headers": headers,
         "params": {
