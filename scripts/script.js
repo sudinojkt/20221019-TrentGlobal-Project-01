@@ -68,7 +68,7 @@ window.addEventListener("DOMContentLoaded", async function(){
                 // therefore the created anoymous function will remember for itself what 'r'
                 // stores when it is created. (Also known as a closure)
                 resultElement.addEventListener("click", function () {
-                    map.flyTo([r.geocodes.main.latitude, r.geoncodes.main.longitude], 16)
+                    map.flyTo([r.geocodes.main.latitude, r.geocodes.main.longitude], 16)
                     marker.openPopup();
                 });
 
