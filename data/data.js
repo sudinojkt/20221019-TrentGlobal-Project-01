@@ -23,6 +23,9 @@ const headers = {
 //     "Retail": "17000",
 //     "Sports and Recreation": "18000",
 //     "Travel and Transportation": "19000",
+//      "Food Court":"13052",
+//      "Fast Food Restaurant":"13145",
+//      "Seafood Restaurant": "13338",
 // };
 
 // Singapore coordinate
@@ -37,7 +40,7 @@ async function search(latLng, search, categories) {
             "ll": latLng,
             "query": search,
             "radius": 2000, 
-            "categories": ["11056", "11057", "11058", "13052", "13053", "13054"],
+            "categories": "13052, 13145, 13338",
             "limit": 50,
             "v": 20210903,
         }
