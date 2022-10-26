@@ -35,16 +35,15 @@
             <button id="btnSearch">Search</button />
 
                 <div class="dropdown" >
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:black">
-                      Foods Variety
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Chinese Foods</a></li>
-                      <li><a class="dropdown-item" href="#">Malay Foods</a></li>
-                      <li><a class="dropdown-item" href="#">Indian Foods</a></li>
-                      <li><a class="dropdown-item" href="#">Other Foods</a></li>
-                    </ul>
-                  </div>
+                    <label for="foods">Food:</label>
+                    <select name="Foods" id="foods">
+                      <option value="1"></option>
+                      <option value="2">Chinese</option>
+                      <option value="3">Malay</option>
+                      <option value="4">Indian</option>
+                      <option value="5">Others</option>
+                    </select>
+                      <button id="search">Search</button>                
 
             <div id="results"></div>
         </div>
