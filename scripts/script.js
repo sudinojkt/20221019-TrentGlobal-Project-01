@@ -24,23 +24,26 @@ window.addEventListener("DOMContentLoaded", async function () {
             //remove all existing markers first before adding the new ones
             searchResultLayer.clearLayers();
 
-            // added code 221026-@1626
-            // Dropdown to select food choice  
-            let searchButton = document.querySelectorAll("#search");
-            searchButton.addEventListener("click", function () {
-                let foodType = document.querySelectorAll("#foods")
-                for (let each of foodType); {
-                    console.log(each.value);
-                }
-            });
-            // added code 221026-@1626
+        // added code 221026-@1626
+            // // Dropdown to select food choice  
+            // let searchButton = document.querySelectorAll("#search");
+            // searchButton.addEventListener("click", function (category) {
+            //     let foodType = document.querySelectorAll("#foods")
+            //     for (let each of foodType); {
+            //         console.log(each.value);
+            //     }
+            // });
+        // added code 221026-@1626
 
             let searchTerms = document.querySelector("#searchTerms").value;
+            // document.querySelector("#searchTerms").value = '';
             let boundaries = map.getBounds();
             let center = boundaries.getCenter();
             let latlng = center.lat + "," + center.lng;
 
-            let searchResults = await search(latlng, searchTerms, 5000);
+            let categoryID = document.querySelector("#foods").value
+
+            let searchResults = await search(latlng, searchTerms, categoryID);
 
             let searchResultElement = document.querySelector("#results");
             for (let r of searchResults.results) {

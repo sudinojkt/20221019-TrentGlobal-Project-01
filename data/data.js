@@ -12,27 +12,18 @@ const headers = {
 }
 
 // Four Square search categoryIDs
-// const categoryIDs = {
-//     "Arts and Entertainment": "10000",
-//     "Business and Professional Services": "11000",
-//     "Community and Government": "12000",
-//     "Dining and Drinking": "13000",
-//     "Event": "14000",
-//     "Health and Medicine": "15000",
-//     "Landmarks and Outdoors": "16000",
-//     "Retail": "17000",
-//     "Sports and Recreation": "18000",
-//     "Travel and Transportation": "19000",
-//      "Food Court":"13052",
-//      "Fast Food Restaurant":"13145",
-//      "Seafood Restaurant": "13338",
-// };
+//FoodCourt = "13052",
+//FastFood = "13145",
+//Seafood = "13338",
 
 // Singapore coordinate
 const latLng = "1.3521,103.8198";
 
 //Get place data function  
 async function search(latLng, search, categories) {
+    if (categories == '0') {
+        categories = "13052, 13145, 13338";
+    }    
     let url = API_BASE_PLACES_URL + "search";
     let response = await axios.get(url, {
         "headers": headers,
@@ -40,7 +31,7 @@ async function search(latLng, search, categories) {
             "ll": latLng,
             "query": search,
             "radius": 2000, 
-            "categories": "13052, 13145, 13338",
+            "categories": categories,      //"13052, 13145, 13338",
             "limit": 50,
             "v": 20210903,
         }
