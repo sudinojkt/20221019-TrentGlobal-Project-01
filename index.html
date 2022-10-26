@@ -30,18 +30,20 @@
     <div id="map-container">
         <button id="btnToggleSearch">Toggle Search</button>
         <div id="map"></div>
-        <div id="search-container">Search
-            <input placeholder="type here" type="text" id="searchTerms" />
-            <button id="btnSearch">Search</button />
+        <div id="search-container">
+            <input placeholder=" search here " type="text" id="searchTerms" />
+            <button id="btnSearch" class="btn btn-info">Search</button />           
 
                 <div class="dropdown" >
-                    <label for="foods">Food Type</label>
-                    <select name="Foods" id="foods">
-                      <option value="0" class="empty" name="food">All food types</option>
-                      <option value="13052" class="foodCourt" name="food">Food Court</option>
-                      <option value="13145" class="fastFood" name="food">Fast Food Restaurant</option>
-                      <option value="13338" class="seaFood" name="food">Seafood Restaurant</option>
-                    </select>             
+                    <label for="foods"> </label>
+                    <select name="Foods" id="foods" class="btn btn-info" style="text-align: left">
+                      <option type="seafood" value="0" class="empty" name="food">All Food Type</option>
+                      <option type="seafood" value="13052" class="foodCourt" name="food">Food Court</option>
+                      <option type="seafood" value="13145" class="fastFood" name="food">Fast Food Restaurant</option>
+                      <option type="seafood" value="13338" class="seaFood" name="food">Seafood Restaurant</option>
+                    </select>
+                    
+            <button id="btnClear" class="btn btn-info">Clear</button />   
 
             <div id="results"></div>
         </div>

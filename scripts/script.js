@@ -31,7 +31,6 @@ window.addEventListener("DOMContentLoaded", async function () {
             let latlng = center.lat + "," + center.lng;
 
             let categoryID = document.querySelector("#foods").value
-
             let searchResults = await search(latlng, searchTerms, categoryID);
 
             let searchResultElement = document.querySelector("#results");
@@ -84,7 +83,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
 function initMap() {
     // create a map object and set center point zoom
-    let map = L.map('map').setView([1.3521, 103.8198], 12);
+    let map = L.map('map').setView([1.3521, 103.8198], 11);
 
     // need set up the tile layer
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
