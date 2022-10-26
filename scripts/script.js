@@ -24,6 +24,12 @@ window.addEventListener("DOMContentLoaded", async function () {
             //remove all existing markers first before adding the new ones
             searchResultLayer.clearLayers();
 
+        // 20221027-0115
+        function myFunction() {
+            document.querySelector("#searchTerms").reset();
+          }
+        // 20221027-0115
+
             let searchTerms = document.querySelector("#searchTerms").value;
             // document.querySelector("#searchTerms").value = '';
             let boundaries = map.getBounds();
