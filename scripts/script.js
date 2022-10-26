@@ -1,18 +1,18 @@
 // Use DOMContentLoaded as our main entry point
-window.addEventListener("DOMContentLoaded", async function(){
+window.addEventListener("DOMContentLoaded", async function () {
 
     // this functionis to set up the application
-    function init(){
+    function init() {
         let map = initMap();
 
         //add a layer to store the search results
         let searchResultLayer = L.layerGroup();
         searchResultLayer.addTo(map);
-        
-        document.querySelector("#btnToggleSearch").addEventListener("click", function(){
+
+        document.querySelector("#btnToggleSearch").addEventListener("click", function () {
             let searchContainerElement = document.querySelector("#search-container");
             let currentDisplay = searchContainerElement.style.display;
-            if (!currentDisplay || currentDisplay == 'none'){
+            if (!currentDisplay || currentDisplay == 'none') {
                 //if it is not visible
                 searchContainerElement.style.display = "block";
             } else {
@@ -20,9 +20,20 @@ window.addEventListener("DOMContentLoaded", async function(){
             }
         });
 
-        document.querySelector("#btnSearch").addEventListener("click", async function(){
+        document.querySelector("#btnSearch").addEventListener("click", async function () {
             //remove all existing markers first before adding the new ones
             searchResultLayer.clearLayers();
+
+            // added code 221026-@1626
+            // Dropdown to select food choice  
+            let searchButton = document.querySelectorAll("#search");
+            searchButton.addEventListener("click", function () {
+                let foodType = document.querySelectorAll("#foods")
+                for (let each of foodType); {
+                    console.log(each.value);
+                }
+            });
+            // added code 221026-@1626
 
             let searchTerms = document.querySelector("#searchTerms").value;
             let boundaries = map.getBounds();
@@ -32,7 +43,7 @@ window.addEventListener("DOMContentLoaded", async function(){
             let searchResults = await search(latlng, searchTerms, 5000);
 
             let searchResultElement = document.querySelector("#results");
-            for (let r of searchResults.results){
+            for (let r of searchResults.results) {
                 console.log(r);
                 //Display the marker
                 let lat = r.geocodes.main.latitude;
@@ -40,14 +51,14 @@ window.addEventListener("DOMContentLoaded", async function(){
 
                 let marker = L.marker([lat, lng]).addTo(searchResultLayer);
 
-                marker.bindPopup(function(){
+                marker.bindPopup(function () {
                     let el = document.createElement('div');
                     // add the 'popup' class to the <div>
                     // see style.css for its definition
                     el.classList.add("popup");
                     el.innerHTML = `<h1>${r.name}</h1>`
 
-                    async function getPicture(){
+                    async function getPicture() {
                         let photos = await getPhoto(r.fsq_id);
                         let firstPhoto = photos[0];
                         let url = firstPhoto.prefix + "200x200" + firstPhoto.suffix;
