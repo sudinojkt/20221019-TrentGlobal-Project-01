@@ -44,7 +44,7 @@ window.addEventListener("DOMContentLoaded", async function(){
                     let el = document.createElement('div');
                     // add the 'popup' class to the <div>
                     // see style.css for its definition
-                    el.classList.add("popup")
+                    el.classList.add("popup");
                     el.innerHTML = `<h1>${r.name}</h1>`
 
                     async function getPicture(){
