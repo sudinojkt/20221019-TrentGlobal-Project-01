@@ -24,17 +24,6 @@ window.addEventListener("DOMContentLoaded", async function () {
             //remove all existing markers first before adding the new ones
             searchResultLayer.clearLayers();
 
-        // added code 221026-@1626
-            // // Dropdown to select food choice  
-            // let searchButton = document.querySelectorAll("#search");
-            // searchButton.addEventListener("click", function (category) {
-            //     let foodType = document.querySelectorAll("#foods")
-            //     for (let each of foodType); {
-            //         console.log(each.value);
-            //     }
-            // });
-        // added code 221026-@1626
-
             let searchTerms = document.querySelector("#searchTerms").value;
             // document.querySelector("#searchTerms").value = '';
             let boundaries = map.getBounds();

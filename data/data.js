@@ -1,5 +1,5 @@
 // All base URLs of API 
-const API_BASE_PLACES_URL = "https://api.foursquare.com/v3/places/";   // fsq places search
+const API_BASE_PLACES_URL = "https://api.foursquare.com/v3/places/"; 
 
 // All API Keys
 const API_KEY = "fsq3QDBN0pfxk64qwMqNNvXhhDwbZOfIZqUEa4L/YjiNATQ=";
@@ -10,11 +10,6 @@ const headers = {
     // API Key to use; the API Key identifies which project it's
     Authorization: API_KEY,
 }
-
-// Four Square search categoryIDs
-//FoodCourt = "13052",
-//FastFood = "13145",
-//Seafood = "13338",
 
 // Singapore coordinate
 const latLng = "1.3521,103.8198";
@@ -31,7 +26,7 @@ async function search(latLng, search, categories) {
             "ll": latLng,
             "query": search,
             "radius": 2000, 
-            "categories": categories,      //"13052, 13145, 13338",
+            "categories": categories,
             "limit": 50,
             "v": 20210903,
         }
