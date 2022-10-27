@@ -23,12 +23,14 @@ window.addEventListener("DOMContentLoaded", async function () {
         document.querySelector("#btnSearch").addEventListener("click", async function () {
             //remove all existing markers first before adding the new ones
             searchResultLayer.clearLayers();
+            let clearResult = document.querySelector("#results");
+            clearResult.innerHTML="";
 
-        // 20221027-0115
-        function myFunction() {
-            document.querySelector("#searchTerms").reset();
-          }
-        // 20221027-0115
+            // 20221027-0115
+            // function myFunction() {
+            //     document.querySelector("#searchTerms").reset();
+            // }
+            // 20221027-0115
 
             let searchTerms = document.querySelector("#searchTerms").value;
             // document.querySelector("#searchTerms").value = '';

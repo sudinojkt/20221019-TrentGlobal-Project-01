@@ -34,8 +34,9 @@
 }
 
 .dropdown {
-    margin: 10px;
-    position: center;
+    margin: 5px;
+    position: right;
+    width: 40px;
 }
 
 #btnToggleSearch {
@@ -51,7 +52,7 @@
     height:300px;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
     /* because the div is a block-level element, so we use display: block */
     #search-container {
         display: block; 
@@ -64,19 +65,24 @@
 }
 
 #searchTerms {
-    min-width: 200px;
+    min-width: 240px;
     height: 40px;
 }
 
-.btn btn-info {
-    background-color: rgba(255,255,255, 0.3);
-    /*text-decoration-color: aliceblue;*/
+.btnDropdown {
+    background-color: rgb(0, 195, 255);
     font-weight: bold;
-}
+    font-size: 16px;
+    position: left;
+    color: whitesmoke;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 4px;   /*3px 6px 4px 6px greenyellow;*/
+} 
 
 #footer {
     position: absolute;
-    bottom: 2%;
+    bottom: 3%;
     left: 55px;
     z-index: 30000;
     background-color: rgba(255,255,255, 0.3);
