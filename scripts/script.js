@@ -1,33 +1,25 @@
-// Use DOMContentLoaded as our main entry point
-window.addEventListener("DOMContentLoaded", async function () {
-
-    // this functionis to set up the application
-    function init() {
+window.addEventListener("DOMContentLoaded", async function(){
+    function init(){
         let map = initMap();
-
-        //add a layer to store the search results
         let searchResultLayer = L.layerGroup();
-        searchResultLayer.addTo(map);
 
-        document.querySelector("#btnToggleSearch").addEventListener("click", function () {
+        searchResultLayer.addTo(map);
+        document.querySelector("#btnToggleSearch").addEventListener("click", function(){
             let searchContainerElement = document.querySelector("#search-container");
             let currentDisplay = searchContainerElement.style.display;
+
             if (!currentDisplay || currentDisplay == 'none') {
-                //if it is not visible
                 searchContainerElement.style.display = "block";
             } else {
-                searchContainerElement.style.display = "none";
-            }
-        });
+                searchContainerElement.style.display = "none";  }
+            });
 
-        document.querySelector("#btnSearch").addEventListener("click", async function () {
-            //remove all existing markers first before adding the new ones
-            searchResultLayer.clearLayers();
+        document.querySelector("#btnSearch").addEventListener("click", async function(){
             let clearResult = document.querySelector("#results");
-            clearResult.innerHTML="";
-
+            clearResult.innerHTML = "";
+            searchResultLayer.clearLayers();
+            
             let searchTerms = document.querySelector("#searchTerms").value;
-            // document.querySelector("#searchTerms").value = '';
             let boundaries = map.getBounds();
             let center = boundaries.getCenter();
             let latlng = center.lat + "," + center.lng;
@@ -97,7 +89,7 @@ function initMap() {
         accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
     }).addTo(map);
     return map; // return map as a result of the function
-} 
+}
 
 
 // Marker Cluster Layer 20221027-1658
@@ -112,7 +104,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     let response = await axios.get("url");     // edit 20221027-1658
     let coordinates = response.data.features[0].geometry.coordinates;
     for (let c of coordinates) {
-        let lat = c[1];  // because the coordinates are in the [lng, lat], we have to reformat [lat, lng]
+        let lat = c[1]
         let lng = c[0];
         let marker = L.marker([lat, lng]);
         marker.addTo(markerClusterLayer)
