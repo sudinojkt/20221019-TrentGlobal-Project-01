@@ -25,7 +25,7 @@ async function search(latLng, search, categories) {
         "params": {
             "ll": latLng,
             "query": search,
-            "radius": 2000, 
+            "radius": 12500, 
             "categories": categories,
             "limit": 50,
             "v": 20210903,
@@ -44,10 +44,9 @@ async function getPhoto(fsq_id) {
     return response.data;
 }
 
-
 //Get place detail  
 async function getPlace(fsq_id) {
-    let url = API_BASE_PLACES_URL + fsq_id;
+    let url = API_BASE_PLACES_URL + {fsq_id};
     let response = await axios.get(url, {
         'headers': headers
     });

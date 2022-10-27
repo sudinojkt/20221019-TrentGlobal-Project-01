@@ -104,3 +104,8 @@ function initMap() {
     }).addTo(map);
     return map; // return map as a result of the function
 } 
+
+// Create the marker cluster layer
+// A LAYER can hold other LAYERS and OVERLAY
+let markerClusterLayer = L.markerClusterGroup(); // <-- only available because we included the marker cluster JS file
+markerClusterLayer.addTo(map);
