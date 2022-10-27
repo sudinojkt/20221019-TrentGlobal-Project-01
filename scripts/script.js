@@ -26,12 +26,6 @@ window.addEventListener("DOMContentLoaded", async function () {
             let clearResult = document.querySelector("#results");
             clearResult.innerHTML="";
 
-            // 20221027-0115
-            // function myFunction() {
-            //     document.querySelector("#searchTerms").reset();
-            // }
-            // 20221027-0115
-
             let searchTerms = document.querySelector("#searchTerms").value;
             // document.querySelector("#searchTerms").value = '';
             let boundaries = map.getBounds();
@@ -105,7 +99,41 @@ function initMap() {
     return map; // return map as a result of the function
 } 
 
+
+// Marker Cluster Layer 20221027-1658
 // Create the marker cluster layer
 // A LAYER can hold other LAYERS and OVERLAY
-let markerClusterLayer = L.markerClusterGroup(); // <-- only available because we included the marker cluster JS file
+
+let markerClusterLayer = L.markerClusterGroup();
 markerClusterLayer.addTo(map);
+
+window.addEventListener("DOMContentLoaded", async function () {
+    // by this time, all the DOM elements have been created
+    let response = await axios.get("url");     // edit 20221027-1658
+    let coordinates = response.data.features[0].geometry.coordinates;
+    for (let c of coordinates) {
+        let lat = c[1];  // because the coordinates are in the [lng, lat], we have to reformat [lat, lng]
+        let lng = c[0];
+        let marker = L.marker([lat, lng]);
+        marker.addTo(markerClusterLayer)
+    }
+});
+
+setInterval(async function () {
+    console.log("Time up")
+    markerClusterLayer.clearLayers();  // remove all the existing markers
+    let response = await axios.get("url");      // edit 20221027-1658
+
+    let coordinates = response.data.features[0].geometry.coordinates;
+    for (let c of coordinates) {
+        let lat = c[1];  // because the coordinates are in the [lng, lat], we have to reformat [lat, lng]
+        let lng = c[0];
+        let marker = L.marker([lat, lng]);
+        marker.bindPopup(`<p>${lat}, ${lng}</p>`)
+        marker.addTo(markerClusterLayer)
+    }
+}, 1000 * 30);
+
+// Marker Cluster Layer 20221027-1658
+
+

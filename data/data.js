@@ -44,7 +44,7 @@ async function getPhoto(fsq_id) {
     return response.data;
 }
 
-//Get place detail  
+//Get place detail  // work in progress 20221027-1738
 async function getPlace(fsq_id) {
     let url = API_BASE_PLACES_URL + {fsq_id};
     let response = await axios.get(url, {
