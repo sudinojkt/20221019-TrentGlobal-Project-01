@@ -11,14 +11,11 @@ const headers = {
     Authorization: API_KEY,
 }
 
-// Singapore coordinate
-const latLng = "1.3521,103.8198";
-
 //Get place data function  
 async function search(latLng, search, categories) {
     if (categories == '0') {
         categories = "13052, 13145, 13338";
-    }    
+    }  
     let url = API_BASE_PLACES_URL + "search";
     let response = await axios.get(url, {
         "headers": headers,
@@ -44,9 +41,9 @@ async function getPhoto(fsq_id) {
     return response.data;
 }
 
-//Get place detail  // work in progress 20221027-1738
-async function getPlace(fsq_id) {
-    let url = API_BASE_PLACES_URL + {fsq_id};
+//Get Places Details 
+async function getPlaces(fsq_id) {
+    let url = API_BASE_PLACES_URL + fsq_id;
     let response = await axios.get(url, {
         'headers': headers
     });

@@ -30,12 +30,11 @@
 }
 
 .search-result {
-    margin: 5px;
+    margin: 2px;
 }
 
 .dropdown {
-    position: right;
-    width: 35px;
+    width: 25px;
 }
 
 #btnToggleSearch {
