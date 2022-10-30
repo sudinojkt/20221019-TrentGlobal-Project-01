@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", async function(){
         let searchResultLayer = L.layerGroup();
 
         searchResultLayer.addTo(map);
-        document.querySelector("#btnToggleSearch").addEventListener("click", function(){
+        document.querySelector("#btnToggleSearch").addEventListener("click", async function(){
             let searchContainerElement = document.querySelector("#search-container");
             let currentDisplay = searchContainerElement.style.display;
             if (!currentDisplay || currentDisplay == 'none'){
@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", async function(){
                     getPicture();
                     return el;
                 });
-
+                
                 let resultElement = document.createElement("div");
                 resultElement.innerText = r.name;
                 resultElement.classList.add("search-result");
@@ -64,6 +64,17 @@ window.addEventListener("DOMContentLoaded", async function(){
 });
 
 function initMap() {
+    function getRandomLatLng(map) {
+    let bounds = map.getBounds();
+    let southWest = bounds.getSouthWest();
+    let northEast = bounds.getNorthEast();
+    let lngSpan = northEast.lng - southWest.lng;
+    let latSpan = northEast.lat - southWest.lat;
+    let randomLng = Math.random() * lngSpan + southWest.lng;
+    let randomLat = Math.random() * latSpan + southWest.lat;
+    return [ randomLat, randomLng,];
+    }
+    
     // create a map object and set center point zoom
     let map = L.map('map').setView([1.3521, 103.8198], 11);
 
@@ -79,3 +90,12 @@ function initMap() {
     console.log(Response.data);
     return map; // return map as a result of the function
 }
+
+//create a marker cluster
+let markerClusterLayer = L.markerClusterGroup();
+for (let i = 0; i < 50; i++) {
+let pos = getRandomLatLng(map);
+L.marker(pos).addTo(markerClusterLayer);
+}
+markerClusterLayer.addTo(map);
+
