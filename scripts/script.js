@@ -63,18 +63,7 @@ window.addEventListener("DOMContentLoaded", async function(){
     init();
 });
 
-function initMap() {
-    function getRandomLatLng(map) {
-    let bounds = map.getBounds();
-    let southWest = bounds.getSouthWest();
-    let northEast = bounds.getNorthEast();
-    let lngSpan = northEast.lng - southWest.lng;
-    let latSpan = northEast.lat - southWest.lat;
-    let randomLng = Math.random() * lngSpan + southWest.lng;
-    let randomLat = Math.random() * latSpan + southWest.lat;
-    return [ randomLat, randomLng,];
-    }
-    
+function initMap() { 
     // create a map object and set center point zoom
     let map = L.map('map').setView([1.3521, 103.8198], 11);
 
@@ -93,9 +82,15 @@ function initMap() {
 
 //create a marker cluster
 let markerClusterLayer = L.markerClusterGroup();
-for (let i = 0; i < 50; i++) {
-let pos = getRandomLatLng(map);
-L.marker(pos).addTo(markerClusterLayer);
-}
-markerClusterLayer.addTo(map);
+let markerClusterLayerList = [];
 
+function getRandomLatLng(map) {
+    let bounds = map.getBounds();
+    let southWest = bounds.getSouthWest();
+    let northEast = bounds.getNorthEast();
+    let lngSpan = northEast.lng - southWest.lng;
+    let latSpan = northEast.lat - southWest.lat;
+    let randomLng = Math.random() * lngSpan + southWest.lng;
+    let randomLat = Math.random() * latSpan + southWest.lat;
+    return [ randomLat, randomLng,];
+    }
