@@ -47,7 +47,6 @@ window.addEventListener("DOMContentLoaded", async function () {
                         element.innerHTML += `<img src="${url}"/>`
                     }
                     getPicture();
-                    return element;
                 });
 
                 let resultElement = document.createElement("div");
