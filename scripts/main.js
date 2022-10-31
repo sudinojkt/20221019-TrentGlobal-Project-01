@@ -1,7 +1,6 @@
 window.addEventListener("DOMContentLoaded", async function () {
     function init() {
         let map = initMap();
-
         let searchResultLayer = L.markerClusterGroup();
         searchResultLayer.addTo(map);
 
@@ -30,7 +29,6 @@ window.addEventListener("DOMContentLoaded", async function () {
 
             let searchResultElement = document.querySelector("#results");
             for (let Results of searchResults.results) {
-                //Display the marker
                 let lat = Results.geocodes.main.latitude;
                 let lng = Results.geocodes.main.longitude;
 
