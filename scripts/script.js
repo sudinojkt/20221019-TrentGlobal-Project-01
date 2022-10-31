@@ -29,33 +29,32 @@ window.addEventListener("DOMContentLoaded", async function () {
             let searchResults = await search(latlng, searchTerms, categoryID);
 
             let searchResultElement = document.querySelector("#results");
-            for (let r of searchResults.results) {
-                console.log(r);
+            for (let Results of searchResults.results) {
                 //Display the marker
-                let lat = r.geocodes.main.latitude;
-                let lng = r.geocodes.main.longitude;
+                let lat = Results.geocodes.main.latitude;
+                let lng = Results.geocodes.main.longitude;
 
                 let marker = L.marker([lat, lng]).addTo(searchResultLayer);
                 marker.bindPopup(function () {
-                    let el = document.createElement('div');
-                    el.classList.add("popup");
-                    el.innerHTML = `<h1>${r.name}</h1>`
+                    let element = document.createElement('div');
+                    element.classList.add("popup");
+                    element.innerHTML = `<h1>${Results.name}</h1>`
 
                     async function getPicture() {
-                        let photos = await getPhoto(r.fsq_id);
+                        let photos = await getPhoto(Results.fsq_id);
                         let firstPhoto = photos[0];
                         let url = firstPhoto.prefix + "100x100" + firstPhoto.suffix;
-                        el.innerHTML += `<img src="${url}"/>`
+                        element.innerHTML += `<img src="${url}"/>`
                     }
                     getPicture();
-                    return el;
+                    return element;
                 });
 
                 let resultElement = document.createElement("div");
-                resultElement.innerText = r.name;
+                resultElement.innerText = Results.name;
                 resultElement.classList.add("search-result");
                 resultElement.addEventListener("click", function () {
-                    map.flyTo([r.geocodes.main.latitude, r.geocodes.main.longitude], 16)
+                    map.flyTo([Results.geocodes.main.latitude, Results.geocodes.main.longitude], 16)
                     marker.openPopup();
                 });
                 searchResultElement.appendChild(resultElement);
