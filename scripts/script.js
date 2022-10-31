@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", async function(){
     function init(){
         let map = initMap();
-        let searchResultLayer = L.layerGroup();
+        let searchResultLayer = L.markerClusterGroup();
 
         searchResultLayer.addTo(map);
         document.querySelector("#btnToggleSearch").addEventListener("click", async function(){
