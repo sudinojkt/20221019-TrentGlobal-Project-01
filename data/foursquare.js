@@ -11,7 +11,7 @@ const headers = {
     Authorization: API_KEY,
 }
 
-//Get place data function  
+//Get place search  
 async function search(latLng, search, categories = "") {
     if (categories == '0') {
         categories = "13052, 13145, 13338";
@@ -20,14 +20,21 @@ async function search(latLng, search, categories = "") {
     let url = API_BASE_PLACES_URL + "search";
     let response = await axios.get(url, {
         "headers": headers,
-        "params": {"ll": latLng, "query": search, "radius": 12500, "categories": categories, "limit": 50,}
+        "params": {
+            "ll": latLng, 
+            "query": search, 
+            "radius": 12500, 
+            "categories": categories, 
+            "limit": 50,}
     });
     return response.data;
 }
 
-//Get photos data 
+//Get Photos 
 async function getPhoto(fsq_id) {
     let url = API_BASE_PLACES_URL + fsq_id + "/photos";
-    let response = await axios.get(url, { "categorie": fsq_id, });
+    let response = await axios.get(url, {
+        "categories": fsq_id, 
+    });
     return response.data;
 }

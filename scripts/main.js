@@ -38,12 +38,12 @@ window.addEventListener("DOMContentLoaded", async function () {
                 marker.bindPopup(function () {
                     let el = document.createElement('div');
                     el.classList.add("popup");
-                    el.innerHTML = `<h1>${r.name}</h1>`
+                    el.innerHTML = `<h6>${r.name}</h6>`
 
                     async function getPicture() {
                         let photos = await getPhoto(r.fsq_id);
                         let firstPhoto = photos[0];
-                        let url = firstPhoto.prefix + "100x100" + firstPhoto.suffix;
+                        let url = firstPhoto.prefix + "25x25" + firstPhoto.suffix;
                         el.innerHTML += `<img src="${url}"/>`
                     }
                     getPicture();
