@@ -20,7 +20,7 @@ async function search(latLng, search, categories = "") {
     let url = API_BASE_PLACES_URL + "search";
     let response = await axios.get(url, {
         "headers": headers,
-        "params": { "ll": latLng, "query": search, "radius": 12500, "categories": categories, "limit": 50, }
+        "params": {"ll": latLng, "query": search, "radius": 12500, "categories": categories, "limit": 50,}
     });
     return response.data;
 }
