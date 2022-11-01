@@ -1,4 +1,5 @@
-window.addEventListener("DOMContentLoaded", async function () {
+    
+    async function taxi() {
     let response = await axios.get("https://api.data.gov.sg/v1/transport/taxi-availability");
     let coordinates = response.data.features[0].geometry.coordinates;
     for (let c of coordinates) {
@@ -6,8 +7,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         let lng = c[0];
         let marker = L.marker([lat, lng]);
         marker.addTo(markerClusterLayer)
-    }
-});
+    }}
 
 setInterval(async function () {
     console.log("Time up")

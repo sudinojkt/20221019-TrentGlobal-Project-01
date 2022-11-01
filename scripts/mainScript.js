@@ -1,3 +1,10 @@
+let icons = L.icon({
+    iconUrl: '../images/taxi.png',
+    iconSize: [40, 40],
+    iconAnchor: [20,40],
+    popupAnchor: [0,-40]
+});
+
 window.addEventListener("DOMContentLoaded", async function () {
 
     function init() {
@@ -34,7 +41,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 let lat = r.geocodes.main.latitude;
                 let lng = r.geocodes.main.longitude;
 
-                let marker = L.marker([lat, lng]).addTo(searchResultLayer);
+                let marker = L.marker([lat, lng], {icon: icons}).addTo(searchResultLayer);
                 marker.bindPopup(function () {
                     let el = document.createElement('div');
                     el.classList.add("popup");
@@ -48,9 +55,9 @@ window.addEventListener("DOMContentLoaded", async function () {
                             <img src="${url}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h6 class="card-title">${r.name}</h6>
-                                <p class="card-text">  </p>
+                                <p class="card-text">${r.location.address} </p>
                                 <div class="card-body">
-			                        <a href="#" class="card-link">Review</a>
+			                        <a href="#" class="card-link"> </a>
 		  	                    </div>
                             </div>
                         </div>          `
