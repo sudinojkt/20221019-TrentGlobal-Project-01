@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                     async function getPicture() {
                         let photos = await getPhoto(r.fsq_id);
                         let firstPhoto = photos[0];
-                        let url = firstPhoto.prefix + "25x25" + firstPhoto.suffix;
+                        let url = firstPhoto.prefix + "200x200" + firstPhoto.suffix;
                         el.innerHTML += `<img src="${url}"/>`
                     }
                     getPicture();
