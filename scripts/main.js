@@ -38,13 +38,24 @@ window.addEventListener("DOMContentLoaded", async function () {
                 marker.bindPopup(function () {
                     let el = document.createElement('div');
                     el.classList.add("popup");
-                    el.innerHTML = `<h6>${r.name}</h6>`
 
                     async function getPicture() {
                         let photos = await getPhoto(r.fsq_id);
                         let firstPhoto = photos[0];
-                        let url = firstPhoto.prefix + "200x200" + firstPhoto.suffix;
-                        el.innerHTML += `<img src="${url}"/>`
+                        let url = firstPhoto.prefix + "80x64" + firstPhoto.suffix;
+                        el.innerHTML += `
+                        <div class="card" style="width: 18rem;">
+                            <img src="${url}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">${r.name}</h6>
+                                <p class="card-text">${r.location</p>
+                                <div class="card-body">
+			                        <a href="#" class="card-link">Review</a>
+			                        <a href="#" class="card-link">Taxi Availiable</a>-->
+		  	                    </div>
+                            </div>
+                        </div>
+                        `
                     }
                     getPicture();
                     return el;
@@ -58,6 +69,25 @@ window.addEventListener("DOMContentLoaded", async function () {
                     marker.openPopup();
                 });
                 searchResultElement.appendChild(resultElement);
+
+
+        // Get co-ordinate on map
+        function onMapClick(e) {
+            alert(e.latlng);
+        }
+        map.on('click', onMapClick);
+
+        var popup = L.popup();
+        
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent(e.latlng.toString())
+                .openOn(map);
+        }
+        map.on('click', onMapClick);
+                
+
             }
         });
     }
