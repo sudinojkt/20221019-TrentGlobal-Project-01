@@ -1,5 +1,5 @@
 #map {
-    height: 85vh;
+    height: 100vh;
 }
 
 #map-container {
@@ -66,9 +66,6 @@
     #searchTerms {
         min-width: 240px;
         height: 40px;
-
-    footer { /* empty */  }
-
 }
 
 .btnDropdown {
@@ -82,4 +79,3 @@
     box-shadow: 4px;
     width: 240px;
 } 
-

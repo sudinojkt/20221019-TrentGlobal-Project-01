@@ -71,34 +71,14 @@ window.addEventListener("DOMContentLoaded", async function () {
                     return el;
                 });
 
-                // let resultElement = document.createElement("div");
-                // resultElement.innerText = r.name;
-                // resultElement.classList.add("search-result");
-                // resultElement.addEventListener("click", function () {
-                //     map.flyTo([r.geocodes.main.latitude, r.geocodes.main.longitude], 16)
-                //     marker.openPopup();
-                // });
-                // searchResultElement.appendChild(resultElement);
-
-/////////////////////// Add new code between this line ///////////////////////////////
-
-        // Get co-ordinate of anywhere on the map(added on 20221101) 
-        function onMapClick(e) {
-            alert(e.latlng);
-        }
-        map.on('click', onMapClick);
-
-        var popup = L.popup();
-        
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent(e.latlng.toString())
-                .openOn(map);
-        }
-        map.on('click', onMapClick);
-
-/////////////////////// Don't code beyond this line ///////////////////////////////
+                let resultElement = document.createElement("div");
+                resultElement.innerText = r.name;
+                resultElement.classList.add("search-result");
+                resultElement.addEventListener("click", function () {
+                    map.flyTo([r.geocodes.main.latitude, r.geocodes.main.longitude], 16)
+                    marker.openPopup();
+                });
+                searchResultElement.appendChild(resultElement);
 
             }
         });
