@@ -1,5 +1,5 @@
 let icons = L.icon({
-    iconUrl: '../images/taxi.png',
+    iconUrl: '../images/food.jpeg',
     iconSize: [40, 40],
     iconAnchor: [20,40],
     popupAnchor: [0,-40]
@@ -12,6 +12,10 @@ window.addEventListener("DOMContentLoaded", async function () {
 
         let searchResultLayer = L.markerClusterGroup();
         searchResultLayer.addTo(map);
+        
+        // insert weather api
+        //let weatherResponse = await axios.get(url);
+        //let weatherData = weatherResponse.data;       
 
         document.querySelector("#btnToggleSearch").addEventListener("click", async function () {
             let searchContainerElement = document.querySelector("#search-container");
@@ -56,6 +60,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                             <div class="card-body">
                                 <h6 class="card-title">${r.name}</h6>
                                 <p class="card-text">${r.location.address} </p>
+                                <p class="card-text">${r.categories.map(cat => cat.name)} </p>
                                 <div class="card-body">
 			                        <a href="#" class="card-link"> </a>
 		  	                    </div>

@@ -58,7 +58,8 @@
     }
 
     #btnToggleSearch {
-        display: none;
+        /*display: none;*/
+        visibility: hidden;
         position: center;
     }
 
@@ -81,3 +82,4 @@
     box-shadow: 4px;
     width: 240px;
 } 
+
