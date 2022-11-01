@@ -71,14 +71,14 @@ window.addEventListener("DOMContentLoaded", async function () {
                     return el;
                 });
 
-                let resultElement = document.createElement("div");
-                resultElement.innerText = r.name;
-                resultElement.classList.add("search-result");
-                resultElement.addEventListener("click", function () {
-                    map.flyTo([r.geocodes.main.latitude, r.geocodes.main.longitude], 16)
-                    marker.openPopup();
-                });
-                searchResultElement.appendChild(resultElement);
+                // let resultElement = document.createElement("div");
+                // resultElement.innerText = r.name;
+                // resultElement.classList.add("search-result");
+                // resultElement.addEventListener("click", function () {
+                //     map.flyTo([r.geocodes.main.latitude, r.geocodes.main.longitude], 16)
+                //     marker.openPopup();
+                // });
+                // searchResultElement.appendChild(resultElement);
 
 /////////////////////// Add new code between this line ///////////////////////////////
 
