@@ -42,20 +42,18 @@ window.addEventListener("DOMContentLoaded", async function () {
                     async function getPicture() {
                         let photos = await getPhoto(r.fsq_id);
                         let firstPhoto = photos[0];
-                        let url = firstPhoto.prefix + "80x64" + firstPhoto.suffix;
+                        let url = firstPhoto.prefix + "100x60" + firstPhoto.suffix;
                         el.innerHTML += `
                         <div class="card" style="width: 18rem;">
                             <img src="${url}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h6 class="card-title">${r.name}</h6>
-                                <p class="card-text">${r.location</p>
+                                <p class="card-text">  </p>
                                 <div class="card-body">
 			                        <a href="#" class="card-link">Review</a>
-			                        <a href="#" class="card-link">Taxi Availiable</a>-->
 		  	                    </div>
                             </div>
-                        </div>
-                        `
+                        </div>          `
                     }
                     getPicture();
                     return el;
@@ -70,8 +68,9 @@ window.addEventListener("DOMContentLoaded", async function () {
                 });
                 searchResultElement.appendChild(resultElement);
 
+/////////////////////// Add new code between this line ///////////////////////////////
 
-        // Get co-ordinate on map
+        // Get co-ordinate of anywhere on the map(added on 20221101) 
         function onMapClick(e) {
             alert(e.latlng);
         }
@@ -86,7 +85,8 @@ window.addEventListener("DOMContentLoaded", async function () {
                 .openOn(map);
         }
         map.on('click', onMapClick);
-                
+
+/////////////////////// Don't code beyond this line ///////////////////////////////
 
             }
         });
