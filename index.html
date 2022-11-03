@@ -28,16 +28,15 @@
 
 </head>
 
-<body>
+<body style="background-color:#0288D1">
 
     <div id="map-container">
         <button id="btnToggleSearch">Search Toggle</button>
         <div id="map"></div>
         <div id="search-container">
-            <input placeholder=" search here " type="text" id="searchTerms" />
-            <button id="btnSearch" class="btn btn-info"><i class="fa fa-search"></i></button />
-            </button>
-
+            <!--<input placeholder=" search here " type="text" id="searchTerms" />
+            <button id="btnSearch" class="btn btn-info"><i class="fa fa-search"></i></button />-->
+                
             <div class="dropdown">
                 <label for="foods"> </label>
                 <select name="Foods" id="foods" class="btnDropdown" style="text-align:left">
@@ -55,6 +54,11 @@
 
                 <div id="results"></div>
             </div>
+        </div>
+
+        <div class="footer">          	   
+            <input placeholder="search here.." type="text" id="searchTerms" />
+            <button id="btnSearch" class="btn btn-info"><i class="fa fa-search"></i></button />
         </div>
 
         <!-- Bootstrap 5.2 -->
