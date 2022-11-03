@@ -1,8 +1,8 @@
 let icons = L.icon({
     iconUrl: '../images/food.png',
     iconSize: [40, 40],
-    iconAnchor: [20,40],
-    popupAnchor: [0,-40]
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40]
 });
 
 window.addEventListener("DOMContentLoaded", async function () {
@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
         let searchResultLayer = L.markerClusterGroup();
         searchResultLayer.addTo(map);
-        
+
         // insert weather api
         //let weatherResponse = await axios.get(url);
         //let weatherData = weatherResponse.data;       
@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 let lat = r.geocodes.main.latitude;
                 let lng = r.geocodes.main.longitude;
 
-                let marker = L.marker([lat, lng], {icon: icons}).addTo(searchResultLayer);
+            let marker = L.marker([lat, lng], { icon: icons }).addTo(searchResultLayer);
                 marker.bindPopup(function () {
                     let el = document.createElement('div');
                     el.classList.add("popup");
@@ -78,14 +78,12 @@ window.addEventListener("DOMContentLoaded", async function () {
                     map.flyTo([r.geocodes.main.latitude, r.geocodes.main.longitude], 16)
                     marker.openPopup();
 
-                    //add circle
                     let circle = L.circle([lat, lng], {
                         color: 'blue',
                         fillColor: 'rgb(255, 165, 0, 0.5)',
                         fillOpacity: 0.5,
                         radius: 200,
-                        }).addTo(map);
-
+                    }).addTo(map);
 
                 });
                 searchResultElement.appendChild(resultElement);
