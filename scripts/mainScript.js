@@ -1,5 +1,5 @@
 let icons = L.icon({
-    iconUrl: '../images/food.jpeg',
+    iconUrl: '../images/food.png',
     iconSize: [40, 40],
     iconAnchor: [20,40],
     popupAnchor: [0,-40]
@@ -77,6 +77,16 @@ window.addEventListener("DOMContentLoaded", async function () {
                 resultElement.addEventListener("click", function () {
                     map.flyTo([r.geocodes.main.latitude, r.geocodes.main.longitude], 16)
                     marker.openPopup();
+
+                    //add circle
+                    let circle = L.circle([lat, lng], {
+                        color: 'blue',
+                        fillColor: 'rgb(255, 165, 0, 0.5)',
+                        fillOpacity: 0.5,
+                        radius: 200,
+                        }).addTo(map);
+
+
                 });
                 searchResultElement.appendChild(resultElement);
 
