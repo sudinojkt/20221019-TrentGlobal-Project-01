@@ -12,11 +12,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
         let searchResultLayer = L.markerClusterGroup();
         searchResultLayer.addTo(map);
-
-        // insert weather api
-        //let weatherResponse = await axios.get(url);
-        //let weatherData = weatherResponse.data;       
-
+   
         document.querySelector("#btnToggleSearch").addEventListener("click", async function () {
             let searchContainerElement = document.querySelector("#search-container");
             let currentDisplay = searchContainerElement.style.display;

@@ -21,11 +21,12 @@ async function search(latLng, search, categories = "") {
     let response = await axios.get(url, {
         "headers": headers,
         "params": {
-            "ll": latLng, 
-            "query": search, 
-            "radius": 12500, 
-            "categories": categories, 
-            "limit": 50,}
+            "ll": latLng,
+            "query": search,
+            "radius": 12500,
+            "categories": categories,
+            "limit": 50,
+        }
     });
     return response.data;
 }

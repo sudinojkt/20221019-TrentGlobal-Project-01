@@ -81,11 +81,11 @@
 .btnDropdown {
     background-color: rgb(0, 195, 255);
     font-weight: bold;
-    font-size: 16px;
-    position: left;
+    font-size: 18px;
+    position: right;
     color: whitesmoke;
-    border: 1px solid;
+    border: 10px solid;
     padding: 10px;
     box-shadow: 4px;
-    width: 240px;
+    width: 150px;
 } 
