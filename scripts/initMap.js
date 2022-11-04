@@ -14,25 +14,23 @@ function initMap() {
     console.log(Response.data);
     return map; // return map as a result of the function
 }
-
     ///////////////////////////////////////////////////////////////////////////////
+    let searchResultLayer = L.markerClusterGroup();
+    searchResultLayer.addTo(map);
+
     let taxiLayer = L.markerClusterGroup();  // create the new Marker Cluster layer
     taxiLayer.addTo(map)
-
-    ///////////////////////////////////////////////////////////////////////////////
+ 
     let busStopLayer = L.markerClusterGroup(); // create the new Marker Cluster layer
     // busStopLayer.addTo(map);
 
-    ///////////////////////////////////////////////////////////////////////////////
     // Setup Controls
     let baseLayers = {
+        'Food': searchResultLayer,
         'Taxi': taxiLayer,
-        'Bus': busStopLayer
+        'Bus': busStopLayer,
     }
-
     // let layerControl = L.control.layers(baseLayers, {});
     // layerControl.addTo(map);
 
     L.control.layers(baseLayers, {}).addTo(map);
-
-    //////////////////////////////////////////////////////////////////////////

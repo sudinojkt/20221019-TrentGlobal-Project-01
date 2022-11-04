@@ -14,7 +14,7 @@ const headers = {
 //Get place search  
 async function search(latLng, search, categories = "") {
     if (categories == '0') {
-        categories = "13052, 13145, 13338";
+        categories = "13099, 13199, 13225, 13052, 13145, 13052, 13338, 13377, 13340";
     }
 
     let url = API_BASE_PLACES_URL + "search";
