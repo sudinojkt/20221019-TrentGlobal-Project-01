@@ -14,3 +14,25 @@ function initMap() {
     console.log(Response.data);
     return map; // return map as a result of the function
 }
+
+    ///////////////////////////////////////////////////////////////////////////////
+    let taxiLayer = L.markerClusterGroup();  // create the new Marker Cluster layer
+    taxiLayer.addTo(map)
+
+    ///////////////////////////////////////////////////////////////////////////////
+    let busStopLayer = L.markerClusterGroup(); // create the new Marker Cluster layer
+    // busStopLayer.addTo(map);
+
+    ///////////////////////////////////////////////////////////////////////////////
+    // Setup Controls
+    let baseLayers = {
+        'Taxi': taxiLayer,
+        'Bus': busStopLayer
+    }
+
+    // let layerControl = L.control.layers(baseLayers, {});
+    // layerControl.addTo(map);
+
+    L.control.layers(baseLayers, {}).addTo(map);
+
+    //////////////////////////////////////////////////////////////////////////

@@ -11,9 +11,7 @@
     top: 15%;
     left: 10px;
     z-index: 30000;
-    background-color: 	rgb(255,222,173, 0.3);
-    /* the height container, depending on its content, can be more than 25px. 
-    But when it has no content, it has to be 25px */
+    background-color:rgb(255,222,173, 0.3);
     height: 10px; 
     width: 350px; 
     padding-top: 2px;
@@ -22,15 +20,18 @@
 }
 
 #results {
-    max-height: 300px;
+    max-height: 180px;
     overflow-y: scroll;
-    background-color: rgb(255,222,173, 0.5);
+    background-color: rgb(210, 210, 210,0.3); 
     width: 240px;
-
+    
 }
 
 .search-result {
     margin: 2px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .dropdown {
@@ -59,9 +60,9 @@
 
     #btnToggleSearch {
         /*display: none;*/
-        visibility: hidden;   /*hidden*/
+        visibility: hidden;
         position: center;
-        background-color:aqua;
+        
     }
 
     #searchTerms {
@@ -69,14 +70,6 @@
         height: 40px;
     }
 }
-
-    footer { 
-        padding-bottom:20px;
-        border-radius: 25px;
-        border: 2px solid #73AD21;
-        padding: 20px;
-    } 
-
 
 .btnDropdown {
     background-color: rgb(0, 195, 255);
@@ -88,5 +81,4 @@
     padding: 10px;
     box-shadow: 4px;
     width: 240px;
-    /*border-radius: 15px;*/
 } 
