@@ -6,13 +6,11 @@ let icons = L.icon({
 });
 
 window.addEventListener("DOMContentLoaded", async function () {
-
     function init() {
         let map = initMap();
-
         let searchResultLayer = L.markerClusterGroup();
         searchResultLayer.addTo(map);
-   
+
         document.querySelector("#btnToggleSearch").addEventListener("click", async function () {
             let searchContainerElement = document.querySelector("#search-container");
             let currentDisplay = searchContainerElement.style.display;
@@ -41,7 +39,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 let lat = r.geocodes.main.latitude;
                 let lng = r.geocodes.main.longitude;
 
-            let marker = L.marker([lat, lng], { icon: icons }).addTo(searchResultLayer);
+                let marker = L.marker([lat, lng], { icon: icons }).addTo(searchResultLayer);
                 marker.bindPopup(function () {
                     let el = document.createElement('div');
                     el.classList.add("popup");
@@ -50,18 +48,12 @@ window.addEventListener("DOMContentLoaded", async function () {
                         let photos = await getPhoto(r.fsq_id);
                         let firstPhoto = photos[0];
                         let url = firstPhoto.prefix + "100x60" + firstPhoto.suffix;
-                        el.innerHTML += `
-                        <div class="card" style="width: 18rem;">
-                            <img src="${url}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">${r.name}</h6>
-                                <p class="card-text">${r.location.address} </p>
-                                <p class="card-text">${r.categories.map(cat => cat.name)} </p>
-                                <div class="card-body">
-			                        <a href="#" class="card-link"> </a>
-		  	                    </div>
-                            </div>
-                        </div>          `
+                        el.innerHTML += `<div class="card" style="width: 18rem;">
+                        <img src="${url}" class="card-img-top">
+                            <h5>${r.name}</h5>       
+                                <p>${r.location.address}</p>
+                                <p>${r.categories.map(cat => cat.name)}</p>
+                            </div>`
                     }
                     getPicture();
                     return el;
