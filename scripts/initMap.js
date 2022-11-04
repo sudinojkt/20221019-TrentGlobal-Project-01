@@ -11,15 +11,13 @@ function initMap() {
         zoomOffset: -1,
         accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
     }).addTo(map);
-    console.log(Response.data);
-    return map; // return map as a result of the function
-}
-    ///////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
     let searchResultLayer = L.markerClusterGroup();
     searchResultLayer.addTo(map);
 
     let taxiLayer = L.markerClusterGroup();  // create the new Marker Cluster layer
-    taxiLayer.addTo(map)
+    // taxiLayer.addTo(map)
  
     let busStopLayer = L.markerClusterGroup(); // create the new Marker Cluster layer
     // busStopLayer.addTo(map);
@@ -30,7 +28,10 @@ function initMap() {
         'Taxi': taxiLayer,
         'Bus': busStopLayer,
     }
-    // let layerControl = L.control.layers(baseLayers, {});
-    // layerControl.addTo(map);
 
     L.control.layers(baseLayers, {}).addTo(map);
+ 
+    return map; 
+}
+
+
