@@ -15,7 +15,7 @@
     /* the height container, depending on its content, can be more than 25px. 
     But when it has no content, it has to be 25px */
     height: 10px; 
-    width: 330px; 
+    width: 350px; 
     padding-top: 2px;
     padding-left: 2px;
     display: none;
@@ -59,7 +59,7 @@
 
     #btnToggleSearch {
         /*display: none;*/
-        visibility: hidden;
+        visibility: hidden;   /*hidden*/
         position: center;
         background-color:aqua;
     }
@@ -87,5 +87,6 @@
     border: 10px solid;
     padding: 10px;
     box-shadow: 4px;
-    width: 150px;
+    width: 240px;
+    /*border-radius: 15px;*/
 } 
