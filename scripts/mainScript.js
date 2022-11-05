@@ -50,10 +50,10 @@ window.addEventListener("DOMContentLoaded", async function () {
                         let url = firstPhoto.prefix + "100x60" + firstPhoto.suffix;
                         el.innerHTML += `<div class="popup-card" style="width:18rem;" style="linge-height:1.0";">
                         <img src="${url}" class="card-img-top">
-                            <h5>${r.name}</h5>       
-                                <p style="line-height:0.5"; style="font-size"=18px;>${r.location.address}</p>
-                                <p style="line-height:0.5"; style="font-size"=18px;>${r.categories.map(cat => cat.name)}</p>
-                            </div>`
+                        <h5><b><u>${r.name}</u></b></h5>
+                            <p>Address: ${r.location.address}.
+                            ${r.categories.map(cat => cat.name)}<p>
+                        </div>`
                     }
                     getPicture();
                     return el;
@@ -72,10 +72,8 @@ window.addEventListener("DOMContentLoaded", async function () {
                         fillOpacity: 0.5,
                         radius: 200,
                     }).addTo(map);
-
                 });
                 searchResultElement.appendChild(resultElement);
-
             }
         });
     }

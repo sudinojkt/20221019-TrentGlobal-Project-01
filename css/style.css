@@ -23,18 +23,13 @@
     max-height: 180px;
     overflow-y: scroll;
     background-color: rgb(210, 210, 210,0.3); 
-    width: 240px;    
+    width: 240px;   
 }
 
 .search-result {
     margin: 2px;
     color: black;
     font-size: 18px;
-    font-weight: bold;
-}
-
-.dropdown {
-    width: 25px;
 }
 
 #btnToggleSearch {
@@ -42,6 +37,11 @@
     left: 50px;
     top: 20px;
     z-index: 300000;
+    color:black;
+    font-size:larger;
+    font-weight: bold;
+    background-color: yellow;
+    border-radius: 15px;
 }
 
 .popup{
@@ -54,50 +54,60 @@
     /* because the div is a block-level element, so we use display: block */
     #search-container {
         display: block; 
-        left: 1%;
+        left: 2%;
     }
 
     #btnToggleSearch {
         /*display: none;*/
         visibility: hidden;
-        position: center;
-        color: blue;
-        
+        position: center; 
     }
 
     #searchTerms {
-        min-width: 240px;
+        min-width: 300px;
         height: 40px;
+        margin: 10px;
+        position: center;
     }
 }
 
 .btnDropdown {
-    background-color: rgb(0, 195, 255);
+    background-color: rgb(0, 195, 255, 0.9);
     font-weight: bold;
     font-size: 18px;
     position: right;
-    color: whitesmoke;
+    color: white;
     border: 10px solid;
     padding: 10px;
     box-shadow: 4px;
-    width: 240px;
+    width: 240px;   
 } 
 
-/* leftlet */
-.leaflet-popup-tip-container {
-	width: 40px;
-	height: 80px;
-	}
-
-.leaflet-popup-content {
-    margin: 13px 24px 13px 20px;
-    line-height: 1.3;
+/* leaflet */ 
+.popup {
     font-size: 18px;
-    font-size: 1.08333em;
-    min-height: 1px;
-    }   
-    
-.fa fa-tripadvisor {
-    font-size:48px;
-    color:blue";
-    }
+    line-height: 1;
+    position: center;
+}
+
+.leaflet-popup-content p {
+    margin: 17px 0;
+    margin: 1.3em 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration-color: blue;
+}
+
+.leaflet-control {
+    position: relative;
+    z-index: 800;
+    pointer-events: visiblePainted; /* IE 9-10 doesn't have auto */
+    pointer-events: auto;
+    color: blue;
+    font-weight: bold;
+}  
+
+.leaflet-control-zoom-in {
+    background-color: yellow;
+    font-size: small;
+}
