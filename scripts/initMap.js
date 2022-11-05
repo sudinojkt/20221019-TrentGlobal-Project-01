@@ -1,4 +1,4 @@
-function initMap() { 
+function initMap() {
     let map = L.map('map').setView([1.3521, 103.8198], 12);
 
     // tile layer
@@ -15,14 +15,15 @@ function initMap() {
     let searchResultLayer = L.markerClusterGroup();
     searchResultLayer.addTo(map);
 
-    let taxiLayer = L.markerClusterGroup();  
-    // taxiLayer.addTo(map)
+    let dummyLayer = L.markerClusterGroup();
+    // dummyLayer.addTo(map)
 
     let baseLayers = {
         'Food': searchResultLayer,
-        'Taxi': taxiLayer,
-    } 
+        'Dummy': dummyLayer,
+    }
 
     L.control.layers(baseLayers, {}).addTo(map);
-    return map; 
+
+    return map;
 }

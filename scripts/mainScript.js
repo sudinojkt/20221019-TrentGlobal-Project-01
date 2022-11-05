@@ -51,8 +51,8 @@ window.addEventListener("DOMContentLoaded", async function () {
                         el.innerHTML += `<div class="popup-card" style="width:18rem;" style="linge-height:1.0";">
                         <img src="${url}" class="card-img-top">
                         <h5><b><u>${r.name}</u></b></h5>
-                            <p>Address: ${r.location.address}.
-                            ${r.categories.map(cat => cat.name)}<p>
+                            <p><b>Address:<b><p><p>${r.location.address}.
+                            ${r.categories.map(cat => cat.name)}</p>
                         </div>`
                     }
                     getPicture();
