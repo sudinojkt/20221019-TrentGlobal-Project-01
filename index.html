@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
 
     <!-- my own css-->
+    <!--<link rel="stylesheet" href="css/leaflet.css" />-->
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
@@ -32,10 +33,7 @@
         <!--<button id="btnToggleSearch">Toggle</button>-->
         <div id="map"></div>
         <div id="search-container">
-            <!--<input placeholder=" search here " type="text" id="searchTerms" />
-            <button id="btnSearch" class="btn btn-info"><i class="fa fa-search"></i></button />-->
-                <!--<button class="button" style="vertical-align:middle"><span></span>Hover</button>-->
-                
+             
             <div class="dropdown">
                 <label for="foods"> </label>
                 <select name="Foods" id="foods" class="btnDropdown" style="text-align:left">
@@ -55,10 +53,12 @@
             </div>
         </div>
 
-        <div class="footer">
+        <footer id="footer">
+        <div class="btn-in-footer"" >
             <input placeholder="search here.." type="text" id="searchTerms" />
-            <button id="btnSearch" class="btn btn-info"><i class="fa fa-search"></i></button />
+            <button id="btnSearch" class="btn btn-info"><i class="fa fa-search"></i></button />  
         </div>
+        </footer>
 
         <!-- Bootstrap 5.2 -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

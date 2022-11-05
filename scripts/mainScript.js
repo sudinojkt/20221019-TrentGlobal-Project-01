@@ -48,11 +48,11 @@ window.addEventListener("DOMContentLoaded", async function () {
                         let photos = await getPhoto(r.fsq_id);
                         let firstPhoto = photos[0];
                         let url = firstPhoto.prefix + "100x60" + firstPhoto.suffix;
-                        el.innerHTML += `<div class="card" style="width: 18rem;">
+                        el.innerHTML += `<div class="popup-card" style="width:18rem;" style="linge-height:1.0";">
                         <img src="${url}" class="card-img-top">
                             <h5>${r.name}</h5>       
-                                <p>${r.location.address}</p>
-                                <p>${r.categories.map(cat => cat.name)}</p>
+                                <p style="line-height:0.5"; style="font-size"=18px;>${r.location.address}</p>
+                                <p style="line-height:0.5"; style="font-size"=18px;>${r.categories.map(cat => cat.name)}</p>
                             </div>`
                     }
                     getPicture();
