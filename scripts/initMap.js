@@ -11,20 +11,16 @@ function initMap() {
         accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
     }).addTo(map);
 
-    // Layer control
+    // Layer control 
     let searchResultLayer = L.markerClusterGroup();
     searchResultLayer.addTo(map);
 
     let taxiLayer = L.markerClusterGroup();  
     // taxiLayer.addTo(map)
 
-    let busStopLayer = L.markerClusterGroup(); 
-    // busStopLayer.addTo(map);
-
     let baseLayers = {
         'Food': searchResultLayer,
         'Taxi': taxiLayer,
-        'Bus': busStopLayer,
     } 
 
     L.control.layers(baseLayers, {}).addTo(map);
