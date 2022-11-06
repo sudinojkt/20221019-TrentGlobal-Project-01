@@ -29,7 +29,7 @@
     margin: 2px;
     color: black;
     font-size: 18px;
-    /*font-weight: bold;*/
+    font-weight: bold;
 }
 
 #btnToggleSearch {
@@ -64,6 +64,12 @@
         position: center;
     }
 
+    .btnSearch {
+        background-color:#9deafa;
+        padding: 1px;;
+    }
+
+
 }
 
 .btnDropdown {
@@ -72,7 +78,7 @@
     font-size: 18px;
     position: right;
     color: white;
-    border: 10px solid;
+    border: 5px solid;
     border-color: black;
     padding: 10px;
     box-shadow: 4px;
@@ -112,7 +118,4 @@
     font-size: small;
 }
 
-.btnSearch {
-    background-color:#9deafa;
-    padding:0;
-}
+
