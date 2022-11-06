@@ -11,10 +11,10 @@
     top: 15%;
     left: 10px;
     z-index: 30000;
-    height: 14px; 
+    height: 10px; 
     width: 350px;
-    padding-top: 0px;
-    padding-left: 0px;
+    padding-top: 2px;
+    padding-left: 2px;
     display: none;
 }
 
@@ -78,9 +78,9 @@
     width: 240px;   
 } 
 
-.btnSearch {
+/*.btnSearch {
     background-color:#9deafa;
-}
+}*/
 
 /* leaflet */ 
 .popup {
