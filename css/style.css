@@ -9,12 +9,12 @@
 #search-container {
     position: absolute;
     top: 15%;
-    left: 10px;
+    left: 1px;
     z-index: 30000;
     height: 10px; 
     width: 350px;
-    padding-top: 2px;
-    padding-left: 2px;
+    padding-top: 0px;
+    padding-left: 0px;
     display: none;
 }
 
@@ -29,7 +29,7 @@
     margin: 2px;
     color: black;
     font-size: 18px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 #btnToggleSearch {
@@ -63,6 +63,7 @@
         margin: 10px;
         position: center;
     }
+
 }
 
 .btnDropdown {
@@ -78,9 +79,7 @@
     width: 240px;   
 } 
 
-/*.btnSearch {
-    background-color:#9deafa;
-}*/
+}
 
 /* leaflet */ 
 .popup {
@@ -112,4 +111,10 @@
 .leaflet-control-zoom-in {
     background-color: yellow;
     font-size: small;
+}
+
+
+btnSearch {
+    background-color:#9deafa;
+    padding:0;
 }
