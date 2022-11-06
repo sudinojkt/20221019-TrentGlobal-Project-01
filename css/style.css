@@ -9,12 +9,12 @@
 #search-container {
     position: absolute;
     top: 15%;
-    left: 1px;
+    left: 10px;
     z-index: 30000;
     height: 10px; 
     width: 350px;
-    padding-top: 0px;
-    padding-left: 0px;
+    padding-top: 2px;
+    padding-left: 2px;
     display: none;
 }
 
@@ -72,7 +72,7 @@
     font-size: 18px;
     position: right;
     color: white;
-    border: 2px solid;
+    border: 10px solid;
     border-color: black;
     padding: 10px;
     box-shadow: 4px;
@@ -112,8 +112,7 @@
     font-size: small;
 }
 
-
-btnSearch {
+.btnSearch {
     background-color:#9deafa;
     padding:0;
 }
