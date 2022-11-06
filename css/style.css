@@ -1,5 +1,5 @@
 #map {
-    height: 90vh;
+    height:90vh;
 }
 
 #map-container {
@@ -59,8 +59,8 @@
 
     #searchTerms {
         min-width: 300px;
-        height: 40px;
-        margin: 10px;
+        height: 50px;
+        margin-top: 1px;
         position: center;
     }
 
@@ -119,5 +119,5 @@
 }
 
 .footer {
-    max-height:10px;
+    max: height 10px;
 }
