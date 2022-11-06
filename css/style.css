@@ -13,8 +13,7 @@
     z-index: 30000;
     height: 10px; 
     width: 350px;
-    padding-top: 2px;
-    padding-left: 2px;
+    background-origin: padding-box;
     display: none;
 }
 
@@ -62,11 +61,12 @@
         height: 50px;
         margin-top: 1px;
         position: center;
+        background-origin: padding-box;
     }
 
     .btnSearch {
         background-color:#9deafa;
-        padding: 1px;;
+        background-origin: padding-box;
     }
 
 
@@ -119,5 +119,5 @@
 }
 
 .footer {
-    max: height 10px;
+    max-height 10px;
 }
