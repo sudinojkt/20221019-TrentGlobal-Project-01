@@ -118,4 +118,6 @@
     font-size: small;
 }
 
-
+.footer {
+    max-height:10px;
+}
