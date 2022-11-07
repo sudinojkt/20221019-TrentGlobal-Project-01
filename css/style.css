@@ -121,3 +121,7 @@
 .footer {
     max-height: 10px;
 }
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out{
+    color: orange;
+}
