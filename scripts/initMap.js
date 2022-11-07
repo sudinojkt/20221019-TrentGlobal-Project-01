@@ -1,5 +1,5 @@
 function initMap() {
-    let map = L.map('map').setView([1.3521, 103.8198], 12);
+    let map = L.map('map').setView([1.3521, 103.8198], 11);
 
     // tile layer
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
