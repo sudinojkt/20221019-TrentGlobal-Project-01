@@ -8,7 +8,7 @@ The themes for this project is Singapore Foods. Where2Eat@SG is a web apps with 
 UI/UX:
 <hr>
 Url:<a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/ui/ux">UI/UX</a>
-<img src="images/uiux.jpg" alt="ui/ux" width="300" height="450">
+<img src="images/uiux.jpg" alt="ui/ux" width="500" height="300">
 
 User Goal:
 <hr>
@@ -22,7 +22,7 @@ Therefore, I think Singapore food fit into my Project theme.
 Color scheme:
 <hr>
 Url: <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/colour">Colour Scheme</a>
-<img src="images/colour-scheme.jpg" alt="colour-scheme" width="300" height="550">
+<img src="images/colour-scheme.jpg" alt="colour-scheme" width="500" height="300">
 
 
 Colour Photo
