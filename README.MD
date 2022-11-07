@@ -1,4 +1,4 @@
-<a href="https://timely-narwhal-5b3f46.netlify.app/"></a>
+<a href="https://timely-narwhal-5b3f46.netlify.app/">Where2Eat@SG</a>
 Where2Eat@SG
 
 Summary
@@ -12,8 +12,8 @@ A search box is a also provided, as an alternative search for all food type with
 
 UI/UX:
 <hr>
-Url:  <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/ui/ux"></a>
-<img src="images/uiux.jpg" alt="ui/ux" width="250" height="250">
+Url:  <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/ui/ux">UI/UX</a>
+<img src="images/uiux.jpg" alt="ui/ux" width="3000" height="450">
 
 User Goal:
 <hr>
@@ -31,8 +31,8 @@ The National Heritage Board roles is to safeguarding and promoting the heritage 
 
 Color scheme:
 <hr>
-Url: <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/colour"></a>
-<img src="images/colour-scheme.jpg" alt="colour-scheme" width="250" height="250">
+Url: <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/colour">Colour Scheme</a>
+<img src="images/colour-scheme.jpg" alt="colour-scheme" width="300" height="450">
 
 
 Colour Photo
@@ -48,7 +48,7 @@ inherit
 
 Features:
 <hr>
-<a href="https://timely-narwhal-5b3f46.netlify.app/"></a>
+<a href="https://timely-narwhal-5b3f46.netlify.app/">Features</a>
 
 Limitations and Future Implementations: 
 <hr>
@@ -65,8 +65,7 @@ Technologies Used;
 
 Test Case:
 <hr>
-
-<a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/test-results"></a>
+<a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/test-results">Test Case</a>
 Test Results
 
 The website is tested for responsiveness using Developer Tools on Chrome and Edge browser for mobile first, tablet and desktop screen Please see the test result here.
