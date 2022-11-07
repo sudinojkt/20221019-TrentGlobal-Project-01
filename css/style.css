@@ -43,7 +43,7 @@
     border-radius: 15px;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 768px) {
     /* because the div is a block-level element, so we use display: block */
     #search-container {
         display: block; 
