@@ -1,6 +1,8 @@
+<a href="https://timely-narwhal-5b3f46.netlify.app/">Where2Eat@SG</a>
 Where2Eat@SG
 
 Summary
+-------
 Where2Eat@SG is a web application with an interactive map feature that allow users to search for food in Singapore base on Four Square API.
 
 It’s customised with a dropdown button to search for foods by food type. Example: Chinese food, Indian food, Indonesia food, Western food ect, 
@@ -9,8 +11,9 @@ A search box is a also provided, as an alternative search for all food type with
 
 
 UI/UX:
-
-Url:  Diagram
+------
+Url:  <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/ui/ux">Diagram</a>
+Diagram
 
 User Goal:
 
@@ -27,6 +30,9 @@ The National Heritage Board roles is to safeguarding and promoting the heritage 
 
 
 Color scheme:
+---------------
+Url: <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/colour">Colors</a>
+
 
 Colour Photo
 These colour was choosen to assimilate the map colour. I am tying to avoid colours that can affect color blindess deficiency such as red, yellow and green. But, sometime you’ve no choice so I used yellow because some color  didn’t work with CSS.
@@ -34,9 +40,13 @@ These colour was choosen to assimilate the map colour. I am tying to avoid colou
 
 
 Fonts: 
+-------
 inherit
 
+
 Features:
+---------
+<a href="https://timely-narwhal-5b3f46.netlify.app/">Features</a>
 
 Limitations and Future Implementations: 
 
@@ -44,7 +54,7 @@ Due to constrain,  I am unable find another meaningful API to add-on to the L.Co
 
 
 Technologies Used;
-
+-----------------
 1. HTML – markup language for creating Web pages
 
 2. CSS - describes how HTML elements are to be displayed on screen
@@ -56,23 +66,27 @@ Leaflet.markercluster
 
 5. Axios - Axios is a promise-based HTTP Client for node.js and the browser.
 
-Testing:
 
+Testing:
+---------
+
+<a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/test-results">Test Results</a>
 Test Results
 
 The website is tested for responsiveness using Developer Tools on Chrome and Edge browser for mobile first, tablet and desktop screen Please see the test result here.
 
 
 Deployment:
-
+-----------
 The website is hosted using Netlify, deployed directly from the main branch of this Github repository. For the detailed deployment steps, you can refer to the blog post on Netlify here.
 
 
 Credits and Acknowledgement:
+----------------------------
 
-Kunxin-Chor :  for boilerplate
+Kunxin-Chor :  boilerplate
 Leaflet :  for css stylesheet
 Font Awesome :  for button icon 
 Axios :  for stylesheet and js script
 Bootstrap :  for stylesheet and js script
-Welsy and Arif : for their guidances 
+Welsy and Arif : guidances 
