@@ -1,4 +1,4 @@
-<a href="https://timely-narwhal-5b3f46.netlify.app/">Where2Eat@SG</a>
+<a href="https://timely-narwhal-5b3f46.netlify.app/"></a>
 Where2Eat@SG
 
 Summary
@@ -13,7 +13,7 @@ A search box is a also provided, as an alternative search for all food type with
 UI/UX:
 <hr>
 Url:  <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/ui/ux"></a>
-<img src="./image/uiux.jpg" alt="ui/ux" width="500" height="600">
+<img src="images/uiux.jpg" alt="ui/ux" width="500" height="600">
 
 User Goal:
 <hr>
@@ -32,8 +32,7 @@ The National Heritage Board roles is to safeguarding and promoting the heritage 
 Color scheme:
 <hr>
 Url: <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/colour"></a>
-<img src="colour-scheme
-.jpg" alt="colour-scheme" width="500" height="600">
+<img src="images/colour-scheme.jpg" alt="colour-scheme" width="500" height="600">
 
 
 Colour Photo
@@ -49,7 +48,7 @@ inherit
 
 Features:
 <hr>
-<a href="https://timely-narwhal-5b3f46.netlify.app/">Features</a>
+<a href="https://timely-narwhal-5b3f46.netlify.app/"></a>
 
 Limitations and Future Implementations: 
 <hr>
@@ -64,10 +63,10 @@ Technologies Used;
 4. Leaflet - JavaScript library used to build web mapping applications
 5. Axios - Promise based HTTP client for the browser and node.js
 
-Testing:
+Test Case:
 <hr>
 
-<a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/test-results">Test Results</a>
+<a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/test-results"></a>
 Test Results
 
 The website is tested for responsiveness using Developer Tools on Chrome and Edge browser for mobile first, tablet and desktop screen Please see the test result here.
