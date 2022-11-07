@@ -8,7 +8,7 @@ The themes for this project is Singapore Foods. Where2Eat@SG is a web apps with 
 UI/UX:
 <hr>
 Url:<a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/ui/ux">UI/UX</a>
-<img src="images/uiux.jpg" alt="ui/ux" width="350" height="450">
+<img src="images/uiux.jpg" alt="ui/ux" width="300" height="450">
 
 User Goal:
 <hr>
