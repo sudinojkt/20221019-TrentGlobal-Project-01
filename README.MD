@@ -12,8 +12,8 @@ A search box is a also provided, as an alternative search for all food type with
 
 UI/UX:
 <hr>
-Url:  <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/ui/ux">Diagram</a>
-<img src="uiux" alt="ui/ux" width="500" height="600">
+Url:  <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/ui/ux"></a>
+<img src="./image/uiux.jpg" alt="ui/ux" width="500" height="600">
 
 User Goal:
 <hr>
@@ -31,7 +31,7 @@ The National Heritage Board roles is to safeguarding and promoting the heritage 
 
 Color scheme:
 <hr>
-Url: <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/colour">Colors</a>
+Url: <a href="https://github.com/sudinojkt/20221019-TrentGlobal-Project-01/tree/main/colour"></a>
 <img src="colour-scheme
 .jpg" alt="colour-scheme" width="500" height="600">
 
